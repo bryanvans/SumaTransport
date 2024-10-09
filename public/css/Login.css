@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    background-image: url(/image/Background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    min-height: 97vh;  
+    overflow-x : hidden;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start; 
+    width: 97%;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px; 
+    margin-top:47px;
+    font-size: 20px;
+
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+.login-register-box {
+    padding: 5px 10px;
+    border:  #AAC7E8 ;
+    border-radius: 20px;
+    color: black;   
+    display: flex;
+    background-color: #AAC7E8;
+    align-items: center;
+}
+
+.login-register-box a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    font-size: 16px;
+}
+
+.login-register-box a:hover {
+    text-decoration: underline;
+}
+
+.SumaTransport{
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.suma {
+    color: white; 
+}
+
+.transport {
+    color: #FFA657;
+}
+
+
+
+.hr{
+    width: 97%;
+    border: none;
+    border-top: 2px solid white;
+    margin: 10px 10px; 
+
+}
+.container {
+    background-color: rgba(217, 217, 217, 0.41);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 20px auto ;
+    height: 360px;
+    
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    scroll-margin-top: auto;
+}
+h2 {
+    margin: 5px;
+    text-align: center;
+    font-weight : bolder;
+    text-transform: Capitalize;
+    margin-bottom: 40px;
+    color: black;
+    margin-top: auto;
+}
+
+
+.p{
+    text-align : center;
+    margin: 20px;
+}
+
+.input{
+    width: 290px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px ;
+    border: 1px solid gray;
+    margin-top: auto;
+}
+
+.button{
+    border :none;
+    outline: none;
+    margin : 10px auto;
+    padding: 12px 20px;
+    width: 150px;
+    color: white;
+    font-size: 16px;
+    cursor : pointer;
+    border-radius: 20px;
+    background-color: black;
+    scroll-margin-top: 10px;
+    margin-top: auto;
+    display: block;
+}
+.p{
+    text-align:center;
+    color: black;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline; /* Tambahkan garis bawah saat di-hover */
+}
