@@ -42,19 +42,19 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#beranda" class="active">Beranda</a></li>
-          <li><a href="index.html#jadwal">Jadwal</a></li>
-          <li><a href="index.html#rute">Rute</a></li>
+          <li><a href="home" class="active">Beranda</a></li>
+          <li><a href="jadwal">Jadwal</a></li>
+          <li><a href="rute">Rute</a></li>
           <li class="dropdown"><a href="#"><span>Informasi Bus</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">KBT</a></li>
-              <li><a href="#">KPT</a></li>
-              <li><a href="#">TIOMAZ</a></li>
-              <li><a href="#">Karya Agung</a></li>
+              <li><a href="kbt">KBT</a></li>
+              <li><a href="kpt">KPT</a></li>
+              <li><a href="tiomaz">TIOMAZ</a></li>
+              <li><a href="karyaagung">Karya Agung</a></li>
             </ul>
           </li>
-          <li><a href="index.html#qna">QnA</a></li>
-          <li><a href="index.html#login/register">Login/Register</a></li>
+          <li><a href="qna">QnA</a></li>
+          <a href="login">Login</a>/<a href="register">Register</a>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -201,6 +201,7 @@
 
   <!-- Main JS File -->
   <script src="{{ asset('homepage/js/main.js') }}"></script>
+
 
 </body>
 
