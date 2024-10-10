@@ -15,9 +15,11 @@
             </h1>
         </div>
         <nav class="navigation">
-            <a href="#beranda">Beranda</a>
-            <a href="#informasi-bus">Informasi Bus</a>
-            <a href="#qna">QnA</a>
+            <a href="beranda">Beranda</a>
+            <a href="jadwal">Jadwal</a>
+            <a href="rute">Rute</a>
+            <a href="informasi-bus">Informasi Bus</a>
+            <a href="qna">QnA</a>
             <div class="login-register-box">
                 <a href="login">Login</a>/<a href="register">Register</a>
         </nav>
