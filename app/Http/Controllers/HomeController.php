@@ -69,6 +69,7 @@ class HomeController extends Controller
         return view('informasibus.karyaagung');
     }
 
+
     /**
      * Show the form for creating a new resource.
      */

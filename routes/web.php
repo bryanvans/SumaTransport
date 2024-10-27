@@ -1,7 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeController;  
+use App\Http\Controllers\BusController;
+use App\Http\Controllers\QnAController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AuthController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +22,19 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// Rute untuk login
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+
+// Rute untuk register
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
+Route::get('register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
+Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::resource('/', HomeController::class);
 Route::get('login', [HomeController::class, 'Login']) -> name('login');
@@ -26,3 +47,9 @@ Route::get('kpt', [HomeController::class, 'KPT']) -> name('kpt');
 Route::get('tiomaz', [HomeController::class, 'TIOMAZ']) -> name('tiomaz');
 Route::get('karyaagung', [HomeController::class, 'KaryaAgung']) -> name('karyaagung');
 Route::get('home', [HomeController::class, 'index']) -> name('home');
+
+Route::get('jadwal', [BusController::class, 'index']);
+
+Route::get('qna', [QnAController::class, 'index'])->name('qna.index');
+Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
+
