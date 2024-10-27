@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Route; // Pastikan untuk mengimpor model Route
 use Illuminate\Http\Request;
 
-class BusController extends Controller
+class BusController 
 {
     public function index()
 {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 
-class QnAController extends Controller
+class QnAController 
 {
     public function index()
     {
