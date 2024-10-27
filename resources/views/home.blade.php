@@ -34,10 +34,10 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">SumaTransport</h1>
+      <a href="home" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1>SumaTransport</h1>
+        <a href="home" class="sitename"></a>
+        </h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -54,7 +54,8 @@
             </ul>
           </li>
           <li><a href="qna">QnA</a></li>
-          <a href="login">Login</a>/<a href="register">Register</a>
+          <li><a href="login">Login</a></li>
+          <li><a href="register">Register</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -112,39 +113,46 @@
 
           <div class="col-xl-5 content">
             <h2>Temukan Informasi Bus Favorit Anda</h2>
-            <a href="#" class="baca-selengkapnya"><span>Baca Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
           </div>
 
           <div class="col-xl-7">
             <div class="row gy-4 icon-boxes">
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box">
-                <img src="homepage\img\KBT1.jpg" alt="Icon Image" style="width: 200px; height: 200px;">
-                  <h3>KBT</h3>
+            <div class="card" style="width: 18rem;">
+                <img src="homepage\img\KBT1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">KBT</h5>
+                  <p class="card-text">Layanan bus andalan dengan rute Medan - Tarutung, menawarkan kenyamanan, keamanan, dan fasilitas modern untuk perjalanan jarak jauh di Sumatera Utara.</p>
+                  <a href="kbt" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div>
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                <img src="homepage\img\KPT1.jpeg" alt="Icon Image" style="width: 200px; height: 200px;">
-                  <h3>KPT</h3>
+              <div class="card" style="width: 18rem;">
+                <img src="homepage\img\KPT1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">KPT</h5>
+                  <p class="card-text">Menyediakan transportasi nyaman dengan rute Medan - Toba, dilengkapi fasilitas modern dan pelayanan terbaik untuk perjalanan di Sumatera Utara.</p>
+                  <a href="kpt" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div>
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                <img src="homepage\img\Tiomaz1.jpeg" alt="Icon Image" style="width: 200px; height: 200px;">
-                  <h3>TIOMAZ</h3>
+              <div class="card" style="width: 18rem;">
+                <img src="homepage\img\Tiomaz1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">TIOMAZ</h5>
+                  <p class="card-text">Transportasi handal dengan rute Medan - Tarutung, menawarkan perjalanan aman dan nyaman dengan fasilitas lengkap untuk kenyamanan penumpang.</p>
+                  <a href="tiomaz" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div>
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                <img src="homepage\img\KaryaAgung.jpeg" alt="Icon Image" style="width: 200px; height: 200px;">
-                  <h3>Karya Agung</h3>
+              <div class="card" style="width: 18rem;">
+                <img src="homepage\img\KaryaAgung.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Karya Agung</h5>
+                  <p class="card-text">Layanan bus terpercaya dengan rute Medan - Sibolga, memberikan kenyamanan dan keamanan untuk perjalanan jarak jauh di Sumatera Utara.</p>
+                  <a href="karyaagung" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div>
 
             </div>
           </div>
@@ -171,15 +179,6 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Beranda</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
 
   </footer>
 
@@ -201,7 +200,6 @@
 
   <!-- Main JS File -->
   <script src="{{ asset('homepage/js/main.js') }}"></script>
-
 
 </body>
 
