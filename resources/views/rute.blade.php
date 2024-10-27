@@ -127,9 +127,6 @@
     </div>
 </div>
 
-
-
-
 <!-- Script untuk menampilkan dan menutup modal -->
 <script>
 function showImage(imageSrc) {
