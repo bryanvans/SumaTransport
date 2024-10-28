@@ -106,7 +106,7 @@
             </div>
             <div class="flex items-center">
                 <span class="bg-green-600 text-white font-bold px-4 py-2 rounded-full">PRM</span>
-                <span class="ml-4 text-gray-800 cursor-pointer underline" onclick="showImage('images/ragunan_senayan.jpg')">Parapat - Medan</span>
+                <span class="ml-4 text-gray-800 cursor-pointer underline" onclick="showImage('image/PR-M.png')">Parapat - Medan</span>
             </div>
             <div class="flex items-center">
                 <span class="bg-purple-700 text-white font-bold px-4 py-2 rounded-full">SM</span>
