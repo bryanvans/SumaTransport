@@ -1,243 +1,193 @@
 <html lang="id">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Suma Transport - Tiomaz
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body, html {
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SumaTransport - TIOMAZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body, html {
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
             background-image: url('image/Background.jpeg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            background-repeat: repeat;
         }
-  </style>
- </head>
- <body class="bg-gray-900 bg-opacity-75">
-  <nav class="bg-black bg-opacity-70 p-4">
-   <div class="container mx-auto flex justify-between items-center">
-    <a class="text-2xl font-bold text-white" href="home">
-     SumaTransport
-    </a>
-    <button class="text-white block lg:hidden" id="navbar-toggle">
-     <i class="fas fa-bars">
-     </i>
-    </button>
-    <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
-     <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="home">
-        Beranda
-       </a>
-      </li>
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="jadwal">
-        Jadwal
-       </a>
-      </li>
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="rute">
-        Rute
-       </a>
-      </li>
-      <li class="relative group">
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="#">
-        Informasi Bus
-        <i class="fas fa-chevron-down">
-        </i>
-       </a>
-       <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black">
-        <li>
-         <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kbt">
-          KBT
-         </a>
-        </li>
-        <li>
-         <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kpt">
-          KPT
-         </a>
-        </li>
-        <li>
-         <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="tiomaz">
-          Tiomaz
-         </a>
-        </li>
-        <li>
-         <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="karyaagung">
-          Karya Agung
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="qna">
-        QnA
-       </a>
-      </li>
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="login">
-        Login
-       </a>
-      </li>
-      <li>
-       <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="register">
-        Register
-       </a>
-      </li>
-     </ul>
+    </style>
+</head>
+<body class="bg-gray-900 bg-opacity-75">
+<nav class="bg-black bg-opacity-70 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a class="text-2xl font-bold text-white" href="home">SumaTransport</a>
+        <button class="text-white block lg:hidden" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
+            <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="home">Beranda</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="jadwal">Jadwal</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="rute">Rute</a></li>
+                <li class="relative group">
+                    <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="#">Informasi Bus<i class="fas fa-chevron-down"></i></a>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black">
+                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kbt">KBT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kpt">KPT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="tiomaz">Tiomaz</a></li>
+                        <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="karyaagung">Karya Agung</a></li>
+                    </ul>
+                </li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="qna">QnA</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="login">Login</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="register">Register</a></li>
+            </ul>
+        </div>
     </div>
-   </div>
-  </nav>
-  <main class="container mx-auto mt-10 p-6 bg-white bg-opacity-80 rounded-lg">
-   <section class="mb-10" id="about">
-    <div class="text-center">
-     <h2 class="text-4xl font-bold mb-6">
-      Tentang Tiomaz
-     </h2>
-     <p class="text-lg">
-      Bus Tiomaz adalah salah satu operator bus terkemuka di Sumatera Utara yang telah beroperasi selama lebih dari 15 tahun. KBT melayani rute-rute utama di Sumatera Utara dengan armada yang nyaman, aman, dan terpercaya. Dengan komitmen untuk memberikan pelayanan terbaik, KBT terus menjadi pilihan utama bagi para penumpang yang bepergian antara kota-kota besar di wilayah ini.
-     </p>
+</nav>
+<div class="container mx-auto mt-4 bg-white p-6 shadow -md">
+    <h1 class="text-2xl font-bold">TIOMAZ</h1>
+    <div class="flex items-center mt-2">
+        <div class="flex items-center text-blue-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
     </div>
-    <div class="flex justify-center mt-8">
-     <div class="bg-white shadow-lg rounded-full w-32 h-32 flex items-center justify-center">
-      <p class="text-2xl font-bold">
-       15 Tahun
-      </p>
-     </div>
+    <p class="mt-2 text-gray-600">Jl. Sisingamangaraja KM. 5,5 No.7, Kota Medan Sumatera Utara</p>
+    <p class="text-gray-600">Jasa Transportasi Darat</p>
+    <div class="flex mt-4">
     </div>
-   </section>
-   <section class="mb-10" id="timeline">
-    <h2 class="text-4xl font-bold text-center mb-6">
-     Rute Utama
-    </h2>
-    <div class="timeline">
-     <div class="flex flex-col items-center">
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Medan
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Lubuk Pakam
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Tebing Tinggi
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Pematang Siantar
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Parapat
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Balige
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Siborong-borong
-       </h3>
-      </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 mb-4 w-full max-w-md">
-       <h3 class="text-xl font-bold">
-        Tarutung
-       </h3>
-      </div>
-     </div>
+</div>
+<div class="container mx-auto mt-4 flex">
+    <div class="w-1/3 bg-white p-6 shadow-md mr-4">
+        <div class="flex items-center mb-4">
+            <i class="fas fa-clock text-blue-500 text-2xl mr-2"></i>
+            <div>
+                <p class="text-gray-600">Jam</p>
+                <p class="text-green-500">Buka hingga pukul 00.00</p>
+            </div>
+        </div>
+        <div class="flex items-center mb-4">
+            <i class="fas fa-phone text-blue-500 text-2xl mr-2"></i>
+            <div>
+                <p class="text-gray-600">Telepon</p>
+                <p class="text-blue-500">08117517722</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <p class="text-gray-600">Alamat</p>
+            <p class="text-gray-600">Jl. Sisingamangaraja KM. 5,5 No.7, Kota Medan Sumatera Utara</p>
+            <p class="text-gray-600">Kota: Sumatera Utara</p>
+            <p class="text-gray-600">Lingkungan: Medan Amplas</p>
+            <p class="text-gray-600">Kawasan administratif: Sumatera Utara</p>
+            <p class="text-gray-600">Negara: Indonesia</p>
+        </div>
+        <div class="p-4">
+        <div class="flex items-center">
+            <i class="fas fa-clock text-gray-500 mr-2"></i>
+            <span class="font-bold">Jam:</span>
+            <span class="text-green-600 font-bold ml-1">Buka</span>
+            <span class="ml-1">· Menutup 00.00</span>
+            <i class="fas fa-chevron-up ml-2"></i>
+        </div>
+        <div class="mt-2">
+            <div class="flex justify-between">
+                <span class="font-bold">Senin</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Selasa</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Rabu</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Kamis</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Jumat</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Sabtu</span>
+                <span>05.00 - 00.00</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-bold">Minggu</span>
+                <span>05.00 - 00.00</span>
+            </div>
+        </div>
     </div>
-   </section>
-   <section class="mb-10" id="facilities">
-    <div class="text-center">
-     <h2 class="text-4xl font-bold mb-6">
-      Fasilitas
-     </h2>
-     <p class="text-lg">
-      Bus Tiomaz berkomitmen untuk memberikan pengalaman perjalanan yang nyaman dan aman bagi setiap penumpangnya. Dengan tujuan memastikan setiap perjalanan menjadi menyenangkan, bus KBT dilengkapi dengan berbagai fasilitas modern yang dirancang untuk memberikan kenyamanan, hiburan, dan keamanan ekstra.
-     </p>
+        <div class="container mx-auto mt-4 flex">
+            <div class="w-full bg-white p-6 shadow-md">
+                <h2 class="text-xl font-bold mb-4">Pemesanan Tiket</h2>
+                <p class="text-gray-600 mb-4">Untuk memesan tiket, silakan hubungi kami langsung melalui WhatsApp. Klik tombol di bawah untuk melanjutkan ke WhatsApp.</p>
+                <a href="https://wa.me/08117517722?text=Halo%20SumaTransport,%20saya%20ingin%20memesan%20tiket%20bus%20KBT." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+                    <i class="fab fa-whatsapp text-2xl mr-2"></i>
+                    <span>Pesan Tiket via WhatsApp</span>
+                </a>
+            </div>
+        </div>
     </div>
-   </section>
-   <section class="mb-10" id="gallery">
-    <div class="container mx-auto">
-     <div class="grid grid-cols-2 gap-4">
-      <div>
-       <img alt="Image of KBT bus exterior" class="w-full h-auto rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/HaKupTPEQTqPJ1F4eALEcfGgIOqiE9fmzFaZF0V9cSbwDgUnA.jpg" width="600"/>
-      </div>
-      <div>
-       <img alt="Image of KBT bus interior" class="w-full h-auto rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/pXd0g9e6uz1XEiX2Qsl5fCc4LewNUutBYohnkFLgR1VuDgUnA.jpg" width="600"/>
-      </div>
-      <div>
-       <img alt="Image of KBT bus seats" class="w-full h-auto rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/pBJmzA3Ncfw5BSAIsXOdAiCzrPk2u6ljP2GrpswnVa19AI1JA.jpg" width="600"/>
-      </div>
-      <div>
-       <img alt="Image of KBT bus on the road" class="w-full h-auto rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/maUacYWMek2IOaPDbjHMNdtAbflPi2qXDrmnp9MsLdI5BQqTA.jpg" width="600"/>
-      </div>
-     </div>
+    <div class="w-2/3 bg-white p-6 shadow-md">
+        <h2 class="text-xl font-bold mb-4">Tentang</h2>
+        <p class="text-gray-600 mb-4">Moda transportasi modern dan terpercaya. Kami beroperasi di sepanjang Jalan Lintas Sumatera , Dimulai dari Kota Medan Hingga Ujung Sibolga. Sebagai transportasi terbaik di Sumatera Utara, Kami berusaha mengutamakan Keselamatan dan Kualitas Pelayanan.</p>
+        <p class="text-gray-600 mb-4">Percayakan perjalanan anda bersama kami, dan temukan pengalaman bepergian dengan Nyaman dan Aman.</p>
+        <h2 class="text-xl font-bold mb-4">
+    Fasilitas Bus Tiomaz
+</h2>
+<div class="mb-4">
+    <div class="flex items-center mb-2">
+        <i class="fas fa-chair text-gray-600 text-2xl mr-2"></i>
+        <div>
+            <p class="text-gray-600 font-semibold">Tempat Duduk Nyaman</p>
+            <p class="text-gray-600">Tempat duduk ergonomis yang sangat nyaman untuk perjalanan panjang.</p>
+        </div>
     </div>
-   </section>
-   <section class="mb-10" id="contact">
-    <div class="text-center">
-     <h2 class="text-4xl font-bold mb-6">
-      Kontak dan Lokasi
-     </h2>
-     <p class="text-lg">
-      Alamat: Jl. Sisingamangaraja No. 123, Medan, Sumatera Utara
-     </p>
-     <p class="text-lg">
-      Telepon: (061) 123-4567
-     </p>
-     <p class="text-lg">
-      Email: info@kbt.com
-     </p>
+    <div class="flex items-center mb-2">
+        <i class="fas fa-wifi text-gray-600 text-2xl mr-2"></i>
+        <div>
+            <p class="text-gray-600 font-semibold">Wi-Fi Gratis</p>
+            <p class="text-gray-600">Akses Wi-Fi gratis tersedia selama perjalanan untuk kenyamanan penumpang.</p>
+        </div>
     </div>
-   </section>
-   <section class="mb-10" id="booking">
-    <div class="text-center">
-     <h2 class="text-4xl font-bold mb-6">
-      Pemesanan Online
-     </h2>
-     <div class="bg-white shadow-lg rounded-lg p-4">
-      <p class="text-lg mb-4">
-       Untuk pemesanan tiket bus Tiomaz, silakan hubungi kami melalui WhatsApp dengan mengklik tombol di bawah ini:
-      </p>
-      <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="https://wa.me/6281234567890" target="_blank">
-       Hubungi via WhatsApp
-      </a>
-     </div>
+    <div class="flex items-center mb-2">
+        <i class="fas fa-snowflake text-gray-600 text-2xl mr-2"></i>
+        <div>
+            <p class="text-gray-600 font-semibold">AC</p>
+            <p class="text-gray-600">Dilengkapi dengan AC untuk kenyamanan penumpang sepanjang perjalanan.</p>
+        </div>
     </div>
-   </section>
-  </main>
-  <footer class="bg-black bg-opacity-70 p-4 mt-10">
-   <div class="container mx-auto text-center text-white">
-    <p>
-     © 2023 SumaTransport. All rights reserved.
-    </p>
-   </div>
-  </footer>
-  <script>
-   document.getElementById('navbar-toggle').addEventListener('click', function() {
-            var menu = document.getElementById('navbar-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-  </script>
- </body>
+    <div class="flex items-center mb-2">
+        <i class="fas fa-hand-sparkles text-gray-600 text-2xl mr-2"></i>
+        <div>
+            <p class="text-gray-600 font-semibold">Kebersihan Terjaga</p>
+            <p class="text-gray-600">Kebersihan bus selalu dijaga dengan sanitasi rutin demi kenyamanan penumpang.</p>
+        </div>
+    </div>
+</div>
+
+
+        <h2 class="text-xl font-bold mb-4">Galeri</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="rounded overflow-hidden shadow-lg">
+                <img src="kptasset\images\slider\kpt1.jpg" alt="Foto Bus KBT 1" class="w-full h-48 object-cover">
+            </div>
+            <div class="rounded overflow-hidden shadow-lg">
+                <img src="kptasset\images\slider\kpt2.jpg" alt="Foto Bus KBT 2" class="w-full h-48 object-cover">
+            </div>
+            <div class="rounded overflow-hidden shadow-lg">
+                <img src="kptasset\images\slider\KPT3.jpg" alt="Foto Bus KBT 3" class="w-full h-48 object-cover">
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
 </html>
