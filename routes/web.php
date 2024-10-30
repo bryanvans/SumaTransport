@@ -53,3 +53,6 @@ Route::get('jadwal', [BusController::class, 'index']);
 Route::get('qna', [QnAController::class, 'index'])->name('qna.index');
 Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
 
+Route::get('/', function () {
+    return view('dashboard');
+});
