@@ -330,19 +330,19 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/jadwal">
+                                <a href="/">
                                     <i data-feather="calendar"></i>
                                     <span data-key="t-jadwal">Jadwal</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/rute">
+                                <a href="/">
                                     <i data-feather="map"></i>
                                     <span data-key="t-rute">Rute</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/qna">
+                                <a href="/">
                                     <i data-feather="help-circle"></i>
                                     <span data-key="t-qna">QnA</span>
                                 </a>

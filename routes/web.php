@@ -56,3 +56,6 @@ Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
 Route::get('/', function () {
     return view('dashboard');
 });
+Route::get('/bus', function () {
+    return view('bus');
+});
