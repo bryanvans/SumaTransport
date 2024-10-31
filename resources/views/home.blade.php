@@ -54,8 +54,22 @@
             </ul>
           </li>
           <li><a href="qna">QnA</a></li>
-          <li><a href="login">Login</a></li>
-          <li><a href="register">Register</a></li>
+          <!-- Tampilkan tombol logout jika pengguna telah login -->
+          @auth
+            <li>
+              <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" style="background: none; border: none; color: white; cursor: pointer;">
+                  Logout
+                </button>
+              </form>
+            </li>
+          @endauth
+          <!-- Link login dan register jika pengguna belum login -->
+          @guest
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Register</a></li>
+          @endguest
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

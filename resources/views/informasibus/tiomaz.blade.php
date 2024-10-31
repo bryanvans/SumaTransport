@@ -18,33 +18,41 @@
     </style>
 </head>
 <body class="bg-gray-900 bg-opacity-75">
-<nav class="bg-black bg-opacity-70 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <a class="text-2xl font-bold text-white" href="home">SumaTransport</a>
-        <button class="text-white block lg:hidden" id="navbar-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
-            <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="home">Beranda</a></li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="jadwal">Jadwal</a></li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="rute">Rute</a></li>
-                <li class="relative group">
-                    <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="#">Informasi Bus<i class="fas fa-chevron-down"></i></a>
-                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black">
-                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kbt">KBT</a></li>
-                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="kpt">KPT</a></li>
-                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="tiomaz">Tiomaz</a></li>
-                        <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="karyaagung">Karya Agung</a></li>
-                    </ul>
-                </li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="qna">QnA</a></li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="login">Login</a></li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="register">Register</a></li>
-            </ul>
+<nav class="bg-gradient-to-r from-black via-gray-800 to-black p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-2xl font-bold text-white hover:text-gray-400 transition" href="home">SumaTransport</a>
+            <button class="text-white block lg:hidden" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
+                <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="home">Beranda</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="jadwal">Jadwal</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="rute">Rute</a></li>
+                    <li class="relative group">
+                        <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
+                        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
+                            <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kbt">KBT</a></li>
+                            <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kpt">KPT</a></li>
+                            <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="tiomaz">Tiomaz</a></li>
+                            <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="karyaagung">Karya Agung</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="qna">QnA</a></li>
+                    @auth
+                    <li><form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400">Logout</button>
+                    </form></li>
+                    @endauth
+                    @guest
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="login">Login</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="register">Register</a></li>
+                    @endguest
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 <div class="container mx-auto mt-4 bg-white p-6 shadow -md">
     <h1 class="text-2xl font-bold">TIOMAZ</h1>
     <div class="flex items-center mt-2">
