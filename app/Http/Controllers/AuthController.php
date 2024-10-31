@@ -8,11 +8,13 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    // Menampilkan halaman login
     public function showLogin()
     {
-        return view('auth.login'); // Ganti dengan path yang sesuai
+        return view('login'); // Ganti dengan path yang sesuai
     }
 
+    // Memproses login pengguna
     public function login(Request $request)
     {
         // Validasi data input
@@ -29,11 +31,13 @@ class AuthController extends Controller
         return back()->with('error', 'Email atau password salah.');
     }
 
+    // Menampilkan halaman registrasi
     public function showRegister()
     {
         return view('register'); // Ganti dengan path yang sesuai
     }
 
+    // Memproses registrasi pengguna baru
     public function register(Request $request)
     {
         // Validasi data input
@@ -53,11 +57,15 @@ class AuthController extends Controller
         return redirect()->route('login')->with('success', 'Registrasi berhasil. Silakan login.');
     }
 
+    // Mengeluarkan pengguna dari sesi
     public function logout(Request $request)
-{
-    Auth::logout(); // Mengeluarkan pengguna dari sesi
+    {
+        Auth::logout(); // Mengeluarkan pengguna dari sesi
 
-    return redirect()->route('login')->with('success', 'Anda telah berhasil logout.');
-}
+        // Hapus dan regenerate session token
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
+        return redirect()->route('login')->with('success', 'Anda telah berhasil logout.');
+    }
 }
