@@ -47,3 +47,4 @@ Route::get('jadwal', [BusController::class, 'index']);
 // Rute untuk halaman QnA
 Route::get('qna', [QnAController::class, 'index'])->name('qna');
 Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
+
