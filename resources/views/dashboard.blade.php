@@ -323,25 +323,25 @@
                             <li>
                                 <a href="/">
                                     <i data-feather="bus"></i>
-                                    <span data-key="t-dashboard">Bus</span>
+                                    <span data-key="t-bus">Bus</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/">
                                     <i data-feather="calendar"></i>
-                                    <span data-key="t-dashboard">Jadwal</span>
+                                    <span data-key="t-jadwal">Jadwal</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/">
                                     <i data-feather="map"></i>
-                                    <span data-key="t-dashboard">Rute</span>
+                                    <span data-key="t-rute">Rute</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/">
                                     <i data-feather="help-circle"></i>
-                                    <span data-key="t-dashboard">QnA</span>
+                                    <span data-key="t-qna">QnA</span>
                                 </a>
                             </li>
 
