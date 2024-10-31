@@ -10,11 +10,14 @@ class Bus extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
-
-    // Definisikan relasi dengan model Route (jika diperlukan)
     public function routes()
     {
         return $this->hasMany(Route::class, 'bus_id');
+    }
+
+    public function facilities()
+    {
+        return $this->hasMany(Facility::class, 'bus_id');
     }
 }
 

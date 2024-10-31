@@ -9,20 +9,20 @@ class QnAController extends Controller
 {
     public function index()
     {
-        return view('qna');
+        $questions = Question::all();
+        return view('qna', compact('questions'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'question' => 'required|string',
+            'question' => 'required|string|max:255',
         ]);
 
-        Question::create($request->all());
+        Question::create([
+            'question' => $request->question,
+        ]);
 
-        return redirect()->back()->with('success', 'Pertanyaan Anda telah dikirim!');
+        return redirect()->route('qna')->with('success', 'Pertanyaan berhasil dikirim!');
     }
 }
-

@@ -76,16 +76,5 @@
             <p>&copy; 2023 SumaTransport. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('navbar-toggle').addEventListener('click', function() {
-            var menu = document.getElementById('navbar-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-    </script>
 </body>
 </html>

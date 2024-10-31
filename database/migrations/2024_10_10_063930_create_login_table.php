@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('login', function (Blueprint $table) {
-            // buat email
             $table->string('email')->unique();
-            //buat password
             $table->string('password');
         });
     }
