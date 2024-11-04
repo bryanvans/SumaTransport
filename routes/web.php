@@ -55,4 +55,3 @@ Route::get('/', function () {
 
 Route::get('/homepage', function () {
     return view('homepage');
-});

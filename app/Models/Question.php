@@ -9,8 +9,11 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'question',
-    ];
+    protected $fillable = ['question', 'answer', 'user_id']; // Ganti 'user_name' dengan 'user_id'
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
