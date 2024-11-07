@@ -49,7 +49,7 @@ Route::get('qna', [QnAController::class, 'index'])->name('qna');
 Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
 
 // Rute untuk halaman Dashboard
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
