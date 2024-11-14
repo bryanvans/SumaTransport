@@ -48,12 +48,4 @@ Route::get('jadwal', [BusController::class, 'index']);
 Route::get('qna', [QnAController::class, 'index'])->name('qna');
 Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
 
-// Rute untuk halaman Dashboard
-Route::get('/', function () {
-    return view('dashboard');
-});
 
-Route::get('/homepage', function () {
-    return view('homepage');
-
-});
