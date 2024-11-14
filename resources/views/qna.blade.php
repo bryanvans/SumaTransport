@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanya Kami - SumaTransport</title>
+    <title>SumaTransport- Tanya Kami</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -27,6 +27,7 @@
             transform: rotate(90deg);
             transition: transform 0.3s ease;
         }
+
     </style>
 </head>
 <body>
@@ -43,18 +44,25 @@
                 <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="rute">Rute</a></li>
                 <li class="relative group">
                     <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
-                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded z-50">
                         <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kbt">KBT</a></li>
                         <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kpt">KPT</a></li>
                         <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="tiomaz">Tiomaz</a></li>
                         <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="karyaagung">Karya Agung</a></li>
                     </ul>
                 </li>
-                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="qna"> QnA</a></li>
-                @guest
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="qna">QnA</a></li>
+                @auth
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition">Logout</button>
+                        </form>
+                    </li>
+                @else
                     <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('login') }}">Login</a></li>
                     <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('register') }}">Register</a></li>
-                @endguest
+                @endauth
             </ul>
         </div>
     </div>
@@ -66,7 +74,7 @@
             <h1 class="text-3xl font-bold">Tanya Kami</h1>
         </div>
 
-        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 z-10">
             @auth
                 <form action="{{ route('qna.store') }}" method="POST">
                     @csrf
