@@ -13,7 +13,7 @@
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="dashboardassets/images/favicon.ico">
-
+    
         <!-- preloader css -->
         <link rel="stylesheet" href="dashboardassets/css/preloader.min.css" type="text/css" />
 

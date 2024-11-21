@@ -131,7 +131,7 @@
                         </div>
                     </li>
                 @endforeach
-            </ul>
+            </ul>   
         </div>
     </div>
  <!-- Footer -->

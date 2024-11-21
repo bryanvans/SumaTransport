@@ -168,7 +168,7 @@ function showImage(imageSrc) {
 function closeModal() {
     document.getElementById('imageModal').classList.add('hidden');
 }
-</script>
+</script>   
 
 
     <footer class="bg-black bg-opacity-70 p-4 mt-10">
