@@ -58,9 +58,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/homepage', function () {
-    return view('homepage');
+Route::get('/bus', function () {
+    return view('bus');
 });
+
+Route::get('/logindashboard', function () {
+    return view('logindashboard');
+})->name('logindashboard');
+
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
 
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
