@@ -26,6 +26,7 @@
             transform: rotate(90deg);
             transition: transform 0.3s ease;
         }
+
     </style>
 </head>
 <body class="bg-gray-900 bg-opacity-75">
@@ -94,7 +95,7 @@
             <h1 class="text-3xl font-bold">Tanya Kami</h1>
         </div>
 
-        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 z-10">
             @auth
                 <form action="{{ route('qna.store') }}" method="POST">
                     @csrf

@@ -40,38 +40,47 @@
         </h1>
       </a>
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="home" class="active">Beranda</a></li>
-          <li><a href="jadwal">Jadwal</a></li>
-          <li><a href="rute">Rute</a></li>
-          <li class="dropdown"><a href="#"><span>Informasi Bus</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+    <ul>
+        <li><a href="home" class="active">Beranda</a></li>
+        <li><a href="jadwal">Jadwal</a></li>
+        <li><a href="rute">Rute</a></li>
+        <li class="dropdown"><a href="#"><span>Informasi Bus</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="kbt">KBT</a></li>
-              <li><a href="kpt">KPT</a></li>
-              <li><a href="tiomaz">TIOMAZ</a></li>
-              <li><a href="karyaagung">Karya Agung</a></li>
+                <li><a href="kbt">KBT</a></li>
+                <li><a href="kpt">KPT</a></li>
+                <li><a href="tiomaz">TIOMAZ</a></li>
+                <li><a href="karyaagung">Karya Agung</a></li>
             </ul>
-          </li>
-          <li><a href="qna">QnA</a></li>
-          <!-- Tampilkan tombol logout jika pengguna telah login -->
-          @auth
-            <li>
-              <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" style="background: none; border: none; color: white; cursor: pointer;">
-                  Logout
-                </button>
-              </form>
-            </li>
-          @endauth
-          <!-- Link login dan register jika pengguna belum login -->
-          @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-          @endguest
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+        </li>
+        <li><a href="qna">QnA</a></li>
+        <!-- Jika pengguna login -->
+        @auth
+        <li class="dropdown">
+            <a href="#">
+                <img src="{{ Auth::user()->avatar ?? asset('default-avatar.png') }}" alt="Avatar" class="rounded-circle" style="width: 30px; height: 30px;">
+                <span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+                <li><a href="{{ route('profile.show') }}">Profil Saya</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" style="background: none; border: none; color: black; cursor: pointer;">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+        @endauth
+        <!-- Jika pengguna belum login -->
+        @guest
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+        @endguest
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
     </div>
   </header>
 
