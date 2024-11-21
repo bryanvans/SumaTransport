@@ -1,8 +1,11 @@
+<?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,31 +19,41 @@ use App\Http\Controllers\AuthController;
 */
 
 // Rute untuk login
-Route::get('login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('login', [AuthController::class, 'login']);
-Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('login', 'showLogin')->name('login');
+    Route::post('login', 'login');
+    Route::post('logout', 'logout')->name('logout');
+});
 
 // Rute untuk register
-Route::get('register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('register', [AuthController::class, 'register']);
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'showRegister')->name('register');
+    Route::post('register', 'register');
+});
 
 // Rute untuk halaman utama
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('home', 'index')->name('home');
+    Route::get('rute', 'Rute')->name('rute');
+    Route::get('kbt', 'KBT')->name('kbt');
+    Route::get('kpt', 'KPT')->name('kpt');
+    Route::get('tiomaz', 'TIOMAZ')->name('tiomaz');
+    Route::get('karyaagung', 'KaryaAgung')->name('karyaagung');
+});
 
-// Rute halaman-halaman lain di HomeController
-Route::get('jadwal', [BusController::class, 'index'])->name('jadwal'); // Hanya di BusController
-Route::get('rute', [HomeController::class, 'Rute'])->name('rute');
-Route::get('kbt', [HomeController::class, 'KBT'])->name('kbt');
-Route::get('kpt', [HomeController::class, 'KPT'])->name('kpt');
-Route::get('tiomaz', [HomeController::class, 'TIOMAZ'])->name('tiomaz');
-Route::get('karyaagung', [HomeController::class, 'KaryaAgung'])->name('karyaagung');
+// Rute untuk jadwal di BusController
+Route::controller(BusController::class)->group(function () {
+    Route::get('jadwal', 'index')->name('jadwal');
+});
 
 // Rute untuk halaman QnA
-Route::get('qna', [QnAController::class, 'index'])->name('qna');
-Route::post('qna', [QnAController::class, 'store'])->name('qna.store');
+Route::controller(QnAController::class)->group(function () {
+    Route::get('qna', 'index')->name('qna');
+    Route::post('qna', 'store')->name('qna.store');
+});
 
-// Rute untuk halaman Dashboard
+// Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -49,4 +62,12 @@ Route::get('/homepage', function () {
     return view('homepage');
 });
 
+// Rute untuk sistem CRUD Profil (auth middleware)
+Route::middleware('auth')->group(function () {
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/profile', 'showProfile')->name('profile.show'); // Read Profil
+        Route::put('/profile/update', 'updateProfile')->name('profile.update'); // Update Profil
+        Route::post('/password/update', 'updatePassword')->name('password.update'); // Update Password
+        Route::delete('/profile', 'deleteAccount')->name('profile.delete'); // Delete Profil
+    });
 });

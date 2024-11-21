@@ -16,8 +16,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 
+        'name',
         'email',
         'password',
+        'avatar',
     ];
+
+    /**
+     * Get the avatar attribute.
+     * 
+     * Returns the URL of the avatar or a default image if no avatar is set.
+     *
+     * @param string|null $value
+     * @return string
+     */
+    public function getAvatarAttribute($value)
+    {
+        return $value ? asset('storage/' . $value) : asset('default-avatar.png');
+    }
 }
