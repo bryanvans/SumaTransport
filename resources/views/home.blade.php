@@ -39,7 +39,6 @@
         <a href="home" class="sitename"></a>
         </h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="home" class="active">Beranda</a></li>
