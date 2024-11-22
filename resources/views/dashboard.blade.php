@@ -295,7 +295,12 @@
                                 <a class="dropdown-item" href="apps-contacts-profile.html"><i class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>
                                 <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock Screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logindashboard') }}"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                                <form action="{{ route('logout') }}" method="POST" style="display: inline;"> @csrf
+                                    <button type="submit" class="dropdown-item" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                        <i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout
+                                    </button>
+                                </form>
+
                             </div>
                         </div>
 
@@ -312,8 +317,6 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" data-key="t-menu">Menu</li>
-
                             <li>
                                 <a href="/dashboard">
                                     <i data-feather="home"></i>
@@ -327,7 +330,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/jadwalbus">
                                     <i data-feather="calendar"></i>
                                     <span data-key="t-dashboard">Jadwal</span>
                                 </a>
@@ -372,8 +375,13 @@
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
+                                        <li class="breadcrumb-item">
+                                            <a href="javascript:void(0);" onclick="window.location.href='/dashboard';">Dashboard</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">
+                                            <a href="javascript:void(0);" onclick="window.location.href='/dashboard';">Dashboard</a>
+                                        </li>
+
                                         </ol>
                                     </div>
 
