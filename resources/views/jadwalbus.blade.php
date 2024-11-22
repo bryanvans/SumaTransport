@@ -323,16 +323,11 @@
                                 </a>
                             </li>
 
-                            
-
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow">
-                                    <i data-feather="sliders"></i>
-                                    <span data-key="t-tables">Tables</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                   <li><a href="{{ route('jadwalbus') }}" data-key="t-data-tables">jadwal</a></li>
-                                </ul>
+                              <a href="{{ route('jadwalbus') }}">
+                                 <i data-feather="sliders"></i>
+                                 <span data-key="t-jadwal">Jadwal</span>
+                              </a>
                             </li>
 
                         </ul>
@@ -401,7 +396,7 @@
         
                                             <tbody>
                                             <tr>
-                                                <td>Tiger Nixon</td>
+                                                <td>121BT017</td>
                                                 <td>System Architect</td>
                                                 <td>Edinburgh</td>
                                                 <td>61</td>
@@ -409,7 +404,7 @@
                                                 <td>$320,800</td>
                                             </tr>
                                             <tr>
-                                                <td>Garrett Winters</td>
+                                                <td>121BT019</td>
                                                 <td>Accountant</td>
                                                 <td>Tokyo</td>
                                                 <td>63</td>
@@ -418,7 +413,7 @@
                                             </tr>
                                             <tr>
                                                 <td>111TI001</td>
-                                                <td>06:00 AM</td>
+                                                <td>06:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -426,7 +421,7 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT023</td>
-                                                <td>01:00 PM</td>
+                                                <td>13:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -434,7 +429,7 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT022</td>
-                                                <td>03:00 PM</td>
+                                                <td>15:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -442,7 +437,7 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT020</td>
-                                                <td>07:00 AM</td>
+                                                <td>07:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -513,7 +508,7 @@
                                                 <td>$313,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Tatyana Fitzpatrick</td>
+                                                <td>111TI013</td>
                                                 <td>Regional Director</td>
                                                 <td>London</td>
                                                 <td>19</td>
@@ -521,7 +516,7 @@
                                                 <td>$385,750</td>
                                             </tr>
                                             <tr>
-                                                <td>Michael Silva</td>
+                                                <td>111TI014</td>
                                                 <td>Marketing Designer</td>
                                                 <td>London</td>
                                                 <td>66</td>
@@ -529,7 +524,7 @@
                                                 <td>$198,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Paul Byrd</td>
+                                                <td>111TI015</td>
                                                 <td>Chief Financial Officer (CFO)</td>
                                                 <td>New York</td>
                                                 <td>64</td>
@@ -537,7 +532,7 @@
                                                 <td>$725,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Gloria Little</td>
+                                                <td>111TI016</td>
                                                 <td>Systems Administrator</td>
                                                 <td>New York</td>
                                                 <td>59</td>
@@ -546,14 +541,14 @@
                                             </tr>
                                             <tr>
                                                 <td>111TI003</td>
-                                                <td></td>
+                                                <td>08:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Dai Rios</td>
+                                                <td>111TI017</td>
                                                 <td>Personnel Lead</td>
                                                 <td>Edinburgh</td>
                                                 <td>35</td>
@@ -561,15 +556,15 @@
                                                 <td>$217,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Jenette Caldwell</td>
-                                                <td>Development Lead</td>
+                                                <td>111TI018</td>
+                                                <td>08:00</td>
                                                 <td>New York</td>
                                                 <td>30</td>
                                                 <td>2011/09/03</td>
                                                 <td>$345,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Yuri Berry</td>
+                                                <td>111TI019</td>
                                                 <td>Chief Marketing Officer (CMO)</td>
                                                 <td>New York</td>
                                                 <td>40</td>
@@ -578,15 +573,15 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT021</td>
-                                                <td>09:00 AM</td>
+                                                <td>09:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Doris Wilder</td>
-                                                <td>Sales Assistant</td>
+                                                <td>111TI019</td>
+                                                <td>08:00</td>
                                                 <td>Sidney</td>
                                                 <td>23</td>
                                                 <td>2010/09/20</td>
@@ -594,14 +589,14 @@
                                             </tr>
                                             <tr>
                                                 <td>111TI002</td>
-                                                <td></td>
+                                                <td>06.00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Gavin Joyce</td>
+                                                <td>111TI020</td>
                                                 <td>Developer</td>
                                                 <td>Edinburgh</td>
                                                 <td>42</td>
@@ -609,7 +604,7 @@
                                                 <td>$92,575</td>
                                             </tr>
                                             <tr>
-                                                <td>Jennifer Chang</td>
+                                                <td>111TI021</td>
                                                 <td>Regional Director</td>
                                                 <td>Singapore</td>
                                                 <td>28</td>
@@ -625,15 +620,15 @@
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Fiona Green</td>
-                                                <td>Chief Operating Officer (COO)</td>
+                                                <td>111TI022</td>
+                                                <td>08:00</td>
                                                 <td>San Francisco</td>
                                                 <td>48</td>
                                                 <td>2010/03/11</td>
                                                 <td>$850,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Shou Itou</td>
+                                                <td>111TI023</td>
                                                 <td>Regional Marketing</td>
                                                 <td>Tokyo</td>
                                                 <td>20</td>
@@ -641,15 +636,15 @@
                                                 <td>$163,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Michelle House</td>
-                                                <td>Integration Specialist</td>
+                                                <td>111TI024</td>
+                                                <td>08:00</td>
                                                 <td>Sidney</td>
                                                 <td>37</td>
                                                 <td>2011/06/02</td>
                                                 <td>$95,400</td>
                                             </tr>
                                             <tr>
-                                                <td>Suki Burks</td>
+                                                <td>111TI025</td>
                                                 <td>Developer</td>
                                                 <td>London</td>
                                                 <td>53</td>
@@ -657,7 +652,7 @@
                                                 <td>$114,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Prescott Bartlett</td>
+                                                <td>466KA005</td>
                                                 <td>Technical Author</td>
                                                 <td>London</td>
                                                 <td>27</td>
@@ -665,7 +660,7 @@
                                                 <td>$145,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Gavin Cortez</td>
+                                                <td>466KA006</td>
                                                 <td>Team Leader</td>
                                                 <td>San Francisco</td>
                                                 <td>22</td>
@@ -673,7 +668,7 @@
                                                 <td>$235,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Martena Mccray</td>
+                                                <td>466KA007</td>
                                                 <td>Post-Sales support</td>
                                                 <td>Edinburgh</td>
                                                 <td>46</td>
@@ -681,7 +676,7 @@
                                                 <td>$324,050</td>
                                             </tr>
                                             <tr>
-                                                <td>Unity Butler</td>
+                                                <td>466KA008</td>
                                                 <td>Marketing Designer</td>
                                                 <td>San Francisco</td>
                                                 <td>47</td>
@@ -689,7 +684,7 @@
                                                 <td>$85,675</td>
                                             </tr>
                                             <tr>
-                                                <td>Howard Hatfield</td>
+                                                <td>466KA009</td>
                                                 <td>Office Manager</td>
                                                 <td>San Francisco</td>
                                                 <td>51</td>
@@ -697,7 +692,7 @@
                                                 <td>$164,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Hope Fuentes</td>
+                                                <td>466KA010</td>
                                                 <td>Secretary</td>
                                                 <td>San Francisco</td>
                                                 <td>41</td>
@@ -705,7 +700,7 @@
                                                 <td>$109,850</td>
                                             </tr>
                                             <tr>
-                                                <td>Vivian Harrell</td>
+                                                <td>311PT001</td>
                                                 <td>Financial Controller</td>
                                                 <td>San Francisco</td>
                                                 <td>62</td>
@@ -713,7 +708,7 @@
                                                 <td>$452,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Timothy Mooney</td>
+                                                <td>311PT002</td>
                                                 <td>Office Manager</td>
                                                 <td>London</td>
                                                 <td>37</td>
@@ -721,7 +716,7 @@
                                                 <td>$136,200</td>
                                             </tr>
                                             <tr>
-                                                <td>Jackson Bradshaw</td>
+                                                <td>311PT003</td>
                                                 <td>Director</td>
                                                 <td>New York</td>
                                                 <td>65</td>
@@ -729,7 +724,7 @@
                                                 <td>$645,750</td>
                                             </tr>
                                             <tr>
-                                                <td>Olivia Liang</td>
+                                                <td>311PT004</td>
                                                 <td>Support Engineer</td>
                                                 <td>Singapore</td>
                                                 <td>64</td>
@@ -738,14 +733,14 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT025</td>
-                                                <td>09:00 AM</td>
+                                                <td>09:00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Sakura Yamamoto</td>
+                                                <td>311PT005</td>
                                                 <td>Support Engineer</td>
                                                 <td>Tokyo</td>
                                                 <td>37</td>
@@ -753,7 +748,7 @@
                                                 <td>$139,575</td>
                                             </tr>
                                             <tr>
-                                                <td>Thor Walton</td>
+                                                <td>311PT006</td>
                                                 <td>Developer</td>
                                                 <td>New York</td>
                                                 <td>61</td>
@@ -761,7 +756,7 @@
                                                 <td>$98,540</td>
                                             </tr>
                                             <tr>
-                                                <td>Finn Camacho</td>
+                                                <td>311PT007</td>
                                                 <td>Support Engineer</td>
                                                 <td>San Francisco</td>
                                                 <td>47</td>
@@ -769,7 +764,7 @@
                                                 <td>$87,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Serge Baldwin</td>
+                                                <td>311PT008</td>
                                                 <td>Data Coordinator</td>
                                                 <td>Singapore</td>
                                                 <td>64</td>
@@ -777,7 +772,7 @@
                                                 <td>$138,575</td>
                                             </tr>
                                             <tr>
-                                                <td>Zenaida Frank</td>
+                                                <td>311PT009</td>
                                                 <td>Software Engineer</td>
                                                 <td>New York</td>
                                                 <td>63</td>
@@ -785,7 +780,7 @@
                                                 <td>$125,250</td>
                                             </tr>
                                             <tr>
-                                                <td>Zorita Serrano</td>
+                                                <td>311PT010</td>
                                                 <td>Software Engineer</td>
                                                 <td>San Francisco</td>
                                                 <td>56</td>
@@ -793,7 +788,7 @@
                                                 <td>$115,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Jennifer Acosta</td>
+                                                <td>466KA011</td>
                                                 <td>Junior Javascript Developer</td>
                                                 <td>Edinburgh</td>
                                                 <td>43</td>
@@ -802,14 +797,14 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT024</td>
-                                                <td>11:00 AM</td>
+                                                <td>11:00 </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>Hermione Butler</td>
+                                                <td>466KA012</td>
                                                 <td>Regional Director</td>
                                                 <td>London</td>
                                                 <td>47</td>
@@ -817,7 +812,7 @@
                                                 <td>$356,250</td>
                                             </tr>
                                             <tr>
-                                                <td>Lael Greer</td>
+                                                <td>466KA013</td>
                                                 <td>Systems Administrator</td>
                                                 <td>London</td>
                                                 <td>21</td>
@@ -825,7 +820,7 @@
                                                 <td>$103,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Jonas Alexander</td>
+                                                <td>466KA014</td>
                                                 <td>Developer</td>
                                                 <td>San Francisco</td>
                                                 <td>30</td>
@@ -833,7 +828,7 @@
                                                 <td>$86,500</td>
                                             </tr>
                                             <tr>
-                                                <td>Shad Decker</td>
+                                                <td>466KA015</td>
                                                 <td>Regional Director</td>
                                                 <td>Edinburgh</td>
                                                 <td>51</td>
@@ -841,7 +836,7 @@
                                                 <td>$183,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Michael Bruce</td>
+                                                <td>121BT019</td>
                                                 <td>Javascript Developer</td>
                                                 <td>Singapore</td>
                                                 <td>29</td>
@@ -849,7 +844,7 @@
                                                 <td>$183,000</td>
                                             </tr>
                                             <tr>
-                                                <td>Donna Snider</td>
+                                                <td>121BT018</td>
                                                 <td>Customer Support</td>
                                                 <td>New York</td>
                                                 <td>27</td>
