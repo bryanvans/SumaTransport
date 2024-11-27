@@ -132,65 +132,6 @@
                             </div>
                         </div>
 
-                        <div class="dropdown d-none d-sm-inline-block">
-                            <button type="button" class="btn header-item" id="mode-setting-btn">
-                                <i data-feather="moon" class="icon-lg layout-mode-dark"></i>
-                                <i data-feather="sun" class="icon-lg layout-mode-light"></i>
-                            </button>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-inline-block ms-1">
-                            <button type="button" class="btn header-item"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="grid" class="icon-lg"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/mail_chimp.png" alt="mail_chimp">
-                                                <span>Mail Chimp</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="dashboardassets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -316,18 +257,35 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li>
+                        <li>
                                 <a href="/dashboard">
                                     <i data-feather="home"></i>
                                     <span data-key="t-dashboard">Dashboard</span>
                                 </a>
                             </li>
-
                             <li>
-                              <a href="{{ route('jadwalbus') }}">
-                                 <i data-feather="sliders"></i>
-                                 <span data-key="t-jadwal">Jadwal</span>
-                              </a>
+                                <a href="/busdashboard">
+                                     <i data-feather= "truck"></i>
+                                    <span data-key="t-dashboard">Bus</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/jadwalbus">
+                                    <i data-feather="calendar"></i>
+                                    <span data-key="t-dashboard">Jadwal</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/rutebus">
+                                    <i data-feather="map"></i>
+                                    <span data-key="t-dashboard">Rute</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/qnadashboard">
+                                    <i data-feather="help-circle"></i>
+                                    <span data-key="t-dashboard">QnA</span>
+                                </a>
                             </li>
 
                         </ul>
@@ -613,7 +571,7 @@
                                             </tr>
                                             <tr>
                                                 <td>111TI004</td>
-                                                <td></td>
+                                                <td>10.00</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>

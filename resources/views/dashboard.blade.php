@@ -26,7 +26,9 @@
         <!-- App Css-->
         <link href="{{asset('dashboardassets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
-    </head>
+        <!-- Menambahkan FontAwesome CDN -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
 
     <body>
 
@@ -133,58 +135,6 @@
                                 <i data-feather="moon" class="icon-lg layout-mode-dark"></i>
                                 <i data-feather="sun" class="icon-lg layout-mode-light"></i>
                             </button>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-inline-block ms-1">
-                            <button type="button" class="btn header-item"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="grid" class="icon-lg"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/github.png')}}" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/bitbucket.png')}}" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/dribbble.png')}}" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/dropbox.png')}}" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/mail_chimp.png')}}" alt="mail_chimp">
-                                                <span>Mail Chimp</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/slack.png')}}" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="dropdown d-inline-block">
@@ -324,8 +274,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/bus">
-                                    <i data-feather="bus"></i>
+                                <a href="/busdashboard">
+                                     <i data-feather= "truck"></i>
                                     <span data-key="t-dashboard">Bus</span>
                                 </a>
                             </li>
@@ -336,13 +286,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/rutebus">
                                     <i data-feather="map"></i>
                                     <span data-key="t-dashboard">Rute</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/qnadashboard">
                                     <i data-feather="help-circle"></i>
                                     <span data-key="t-dashboard">QnA</span>
                                 </a>
@@ -609,7 +559,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>Karya</b> Agung</h4>
                                                                 <p class="text-white-50 font-size-13">Karya Agung menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                 Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->
@@ -624,7 +573,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>KPT</b></h4>
                                                                 <p class="text-white-50 font-size-13">KPT menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                 Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->
@@ -639,7 +587,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>KBT</b></h4>
                                                                 <p class="text-white-50 font-size-13">KBT menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                     Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->

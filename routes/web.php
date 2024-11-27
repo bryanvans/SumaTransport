@@ -66,6 +66,21 @@ Route::get('/jadwalbus', function () {
     return view('jadwalbus');
 })->name('jadwalbus');
 
+// routes/web.php
+Route::get('/rutebus', function () {
+    return view('rutebus');
+})->name('rutebus');
+
+Route::get('/busdashboard', function () {
+    return view('busdashboard');
+})->name('busdashboard');
+
+Route::get('/qnadashboard', function () {
+    return view('qnadashboard');
+})->name('qnadashboard');
+
+
+
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
     Route::controller(UserController::class)->group(function () {
