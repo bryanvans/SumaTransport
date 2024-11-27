@@ -100,13 +100,13 @@
                         <div class="dropdown d-none d-sm-inline-block">
                             <button type="button" class="btn header-item"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="header-lang-img" src="{{asset('dashboardassets/images/flags/us.jpg')}}" alt="Header Language" height="16">
+                                <img id="header-lang-img" src="{{asset('dashboardassets/images/flags/indonesia.jpg')}}" alt="Header Language" height="16">
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
-                                    <img src="{{asset('dashboardassets/images/flags/us.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                                    <img src="{{asset('dashboardassets/images/flags/indonesia.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Indonesia</span>
                                 </a>
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
@@ -141,7 +141,6 @@
                             <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i data-feather="bell" class="icon-lg"></i>
-                                <span class="badge bg-danger rounded-pill">5</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
@@ -157,65 +156,15 @@
                                 </div>
                                 <div data-simplebar style="max-height: 230px;">
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{asset('assets/images/users/avatar-3.jpg')}}" class="rounded-circle avatar-sm" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">James Lemire</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">It will seem like simplified English.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>1 hour ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
                                     <a href="#!" class="text-reset notification-item">
                                         <div class="d-flex">
-                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                                    <i class="bx bx-cart"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your order is placed</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>3 min ago</span></p>
-                                                </div>
-                                            </div>
                                         </div>
                                     </a>
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                    <i class="bx bx-badge-check"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your item is shipped</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>3 min ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
 
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{asset('dashboardassets/images/users/avatar-6.jpg')}}" class="rounded-circle avatar-sm" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Salena Layfield</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>1 hour ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
                                 </div>
                                 <div class="p-2 border-top d-grid">
@@ -243,7 +192,6 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <a class="dropdown-item" href="apps-contacts-profile.html"><i class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>
-                                <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock Screen</a>
                                 <div class="dropdown-divider"></div>
                                 <form action="{{ route('logout') }}" method="POST" style="display: inline;"> @csrf
                                     <button type="submit" class="dropdown-item" style="background: none; border: none; padding: 0; cursor: pointer;">
@@ -463,17 +411,17 @@
                                                 <div class="mt-4 mt-sm-0">
                                                     <div>
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-success"></i> KBT</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">196</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">1.166</span></h6>
                                                     </div>
     
                                                     <div class="mt-4 pt-2">
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i> Karya Agung</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">43</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">250</span></h6>
                                                     </div>
     
                                                     <div class="mt-4 pt-2">
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-info"></i> KPT</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">87</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">584</span></h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -519,7 +467,7 @@
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <p class="mb-2 text-muted text-uppercase font-size-11">Total Passengers</p>
-                                                                        <h5 class="fw-medium">2632</h5>
+                                                                        <h5 class="fw-medium">2000</h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">
@@ -655,85 +603,46 @@
 
                 <div class="p-4">
                     
-                    <div class="form-check form-check-inline">
+                    
                         <input class="form-check-input" type="radio" name="layout"
                             id="layout-vertical" value="vertical">
-                        
-                    </div>
-                    <div class="form-check form-check-inline">
+                    
                         <input class="form-check-input" type="radio" name="layout"
                             id="layout-horizontal" value="horizontal">
-                        
-                    </div>
 
-                    
-
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-mode"
                             id="layout-mode-light" value="light">
-                        
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-mode"
                             id="layout-mode-dark" value="dark">
-                        
-                    </div>
 
                     
 
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-width"
                             id="layout-width-fuild" value="fuild" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
-                        
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-width"
                             id="layout-width-boxed" value="boxed" onchange="document.body.setAttribute('data-layout-size', 'boxed')">
-                       
-                    </div>
-
                     
-
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-position"
                             id="layout-position-fixed" value="fixed" onchange="document.body.setAttribute('data-layout-scrollable', 'false')">
-                        
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-position"
                             id="layout-position-scrollable" value="scrollable" onchange="document.body.setAttribute('data-layout-scrollable', 'true')">
-                        
-                    </div>
 
-                    
-
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="topbar-color"
                             id="topbar-color-light" value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
-                        
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="topbar-color"
                             id="topbar-color-dark" value="dark" onchange="document.body.setAttribute('data-topbar', 'dark')">
-                        
-                    </div>
-
-                    
 
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-default" value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
-                        
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-compact" value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'md')">
-                        
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-small" value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
-                        
                     </div>
 
                     
@@ -741,17 +650,14 @@
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-light" value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
-                        
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-dark" value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
-                        
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-brand" value="brand" onchange="document.body.setAttribute('data-sidebar', 'brand')">
-                        
                     </div>
 
                     
@@ -759,12 +665,10 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-direction"
                             id="layout-direction-ltr" value="ltr">
-                        
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-direction"
                             id="layout-direction-rtl" value="rtl">
-                        
                     </div>
 
                 </div>

@@ -6,7 +6,7 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\BusScheduleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -103,3 +103,8 @@ Route::middleware('auth')->group(function () {
         Route::delete('/profile', 'deleteAccount')->name('profile.delete'); // Delete Profil
     });
 });
+
+// Rute untuk API
+
+
+Route::get('/bus-schedules', [BusScheduleController::class, 'getSchedules']);
