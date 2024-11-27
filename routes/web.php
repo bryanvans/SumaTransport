@@ -79,8 +79,21 @@ Route::get('/qnadashboard', function () {
     return view('qnadashboard');
 })->name('qnadashboard');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');  
 
+Route::get('/rutebus', function () {
+    return view('rutebus');
+})->name('rutebus');
 
+Route::get('/qnadashboard', function () {
+    return view('qnadashboard');
+})->name('qnadashboard');
+
+Route::get('/jadwalbus', function () {
+    return view('jadwalbus');
+})->name('jadwalbus');
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
     Route::controller(UserController::class)->group(function () {

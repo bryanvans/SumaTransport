@@ -6,7 +6,7 @@
 <head>
         
         <meta charset="utf-8" />
-        <title>DataTables | Minia - Minimal Admin & Dashboard Template</title>
+        <title>Dashboard jadwal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -47,19 +47,19 @@
                         <div class="navbar-brand-box">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="dashboardassets/images/logo-sm.svg" alt="" height="24">
+                                    <img src="http://127.0.0.1:8000/dashboardassets/images/bus-icon.svg" alt="" height="24">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="dashboardassets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
+                                    <img src="http://127.0.0.1:8000/dashboardassets/images/bus-icon.svg" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="dashboardassets/images/logo-sm.svg" alt="" height="24">
+                                    <img src="http://127.0.0.1:8000/dashboardassets/images/bus-icon.svg" alt="" height="24">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="dashboardassets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
+                                    <img src="http://127.0.0.1:8000/dashboardassets/images/bus-icon.svg" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
                                 </span>
                             </a>
                         </div>
@@ -130,6 +130,13 @@
                                     <img src="dashboardassets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                                 </a>
                             </div>
+                        </div>
+                       
+                        <div class="dropdown d-none d-sm-inline-block">
+                            <button type="button" class="btn header-item" id="mode-setting-btn">
+                                <i data-feather="moon" class="icon-lg layout-mode-dark"></i>
+                                <i data-feather="sun" class="icon-lg layout-mode-light"></i>
+                            </button>
                         </div>
 
                         <div class="dropdown d-inline-block">
@@ -313,8 +320,8 @@
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                            <li class="breadcrumb-item active">TabelJadwal</li>
+                                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                            <li class="breadcrumb-item active"><a href="{{ route('jadwalbus') }}">Jadwal</a></li>
                                         </ol>
                                     </div>
 
