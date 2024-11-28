@@ -94,10 +94,10 @@
     </div>
 </nav>
 
-
     <!-- QnA Section -->
     <div class="container mx-auto mt-16 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-4xl">
         <h1 class="text-3xl font-bold text-center mb-6 text-white">Tanya Kami</h1>
+
         @auth
             <form action="{{ route('qna.store') }}" method="POST">
                 @csrf
@@ -112,6 +112,22 @@
                 <p>Anda harus <a href="{{ route('login') }}" class="text-blue-400 hover:text-blue-600 transition font-semibold">login</a> untuk mengajukan pertanyaan.</p>
             </div>
         @endauth
+
+        <!-- Display Questions -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-white mb-4">Pertanyaan yang Diajukan</h2>
+            @if ($questions->isEmpty())
+                <p class="text-gray-300">Belum ada pertanyaan yang diajukan.</p>
+            @else
+                <ul class="space-y-4">
+                    @foreach ($questions as $question)
+                        <li class="bg-gray-700 p-4 rounded-md shadow-md">
+                            <p class="text-gray-300">{{ $question->question }}</p>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
     </div>
 
     <!-- Footer -->
