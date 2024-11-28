@@ -6,6 +6,7 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/profile', 'deleteAccount')->name('profile.delete'); // Delete Profil
     });
 });
+
+// Rute untuk login/register dengan Google
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

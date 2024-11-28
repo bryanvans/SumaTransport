@@ -1,207 +1,168 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profil</title>
+    <title>Profil Saya - SumaTransport</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom right, #2b5876, #4e4376), url('{{ asset('image/Background.jpeg') }}');
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 1)), 
+                              url('{{ asset('image/Background.jpeg') }}');
             background-size: cover;
-            background-attachment: fixed;
-            color: #ffffff;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .btn:hover {
-            background-color: #2563eb;
-            transform: scale(1.05);
-            transition: all 0.3s ease-in-out;
+        .logout-button {
+            padding: 0.75rem 1rem; 
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .form-control:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        .logout-button:hover {
+            background-color: rgba(255, 255, 255, 0.1); 
         }
 
-        .modal {
-            transition: all 0.3s ease-in-out;
+        table tbody tr:hover {
+            background-color: rgba(229, 231, 235, 0.8); 
+            transition: background-color 0.3s ease;
         }
 
-        .modal.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .container {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .avatar {
-            width: 120px; 
-            height: 120px; 
-            object-fit: cover; 
-            border-radius: 50%;
-            border: 3px solid #2563eb;
-        }
-
-        h1, p {
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        footer p {
-            font-size: 0.875rem;
-            color: #d1d5db;
+        .navbar-toggle-active i {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
+<body class="bg-gray-900 bg-opacity-75">
 
-<body>
     <!-- Navbar -->
-    <nav class="bg-gray-800 p-4 shadow-lg">
+    <nav class="bg-gradient-to-r from-black via-gray-800 to-black p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="{{ route('home') }}" class="text-2xl font-bold hover:text-gray-300">SumaTransport</a>
-            <ul class="flex space-x-4">
-                <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
-                <li>
-                    <form action="{{ route('logout') }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="hover:underline">Logout</button>
-                    </form>
-                </li>
-            </ul>
+            <a class="text-2xl font-bold text-white hover:text-gray-400 transition" href="{{ route('home') }}">SumaTransport</a>
+            <button class="text-white block lg:hidden" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
+                <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('home') }}">Beranda</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('jadwal') }}">Jadwal</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('rute') }}">Rute</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="{{ route('qna') }}">QnA</a></li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit" class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition logout-button">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Flash Messages -->
-    @if(session('success'))
-        <div class="container mx-auto mt-4 bg-green-500 text-white p-4 rounded shadow-lg">
-            <p class="text-center">{{ session('success') }}</p>
-        </div>
-    @endif
-
-    @if($errors->any())
-        <div class="container mx-auto mt-4 bg-red-500 text-white p-4 rounded shadow-lg">
-            <ul class="list-disc pl-5">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <!-- Profil Container -->
-    <main class="container mx-auto mt-10 p-6 rounded-lg shadow-2xl max-w-2xl">
+    <!-- Profil -->
+    <div class="container mx-auto mt-16 p-4 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-md">
+        <h1 class="text-4xl font-bold text-center mb-6 text-white">Profil Saya</h1>
         <div class="text-center">
-            <!-- Avatar -->
             <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('homepage/img/default-avatar.png') }}"
-                class="avatar mx-auto" alt="Foto Profil">
-
-            <h1 class="text-3xl font-bold mt-4">{{ Auth::user()->name }}</h1>
-            <p class="text-gray-400">Email: {{ Auth::user()->email }}</p>
-            <p class="text-gray-400">Bergabung sejak: {{ Auth::user()->created_at->format('d M Y') }}</p>
-
-            <div class="mt-6 space-x-4">
-                <!-- Edit Profil Button -->
-                <button class="btn px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded"
-                    onclick="toggleModal('editProfileModal')">
-                    Edit Profil
-                </button>
-                <!-- Ubah Kata Sandi Button -->
-                <button class="btn px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded"
-                    onclick="toggleModal('changePasswordModal')">
-                    Ubah Kata Sandi
-                </button>
-            </div>
+                class="w-24 h-24 rounded-full mx-auto border-2 border-blue-600" alt="Foto Profil">
+            <h2 class="text-2xl font-semibold mt-4 text-white">{{ Auth::user()->name }}</h2>
+            <p class="text-sm text-gray-300">Email: {{ Auth::user()->email }}</p>
+            <p class="text-sm text-gray-300">Bergabung sejak: {{ Auth::user()->created_at->format('d M Y') }}</p>
         </div>
-    </main>
+        <div class="mt-6 space-y-4">
+            <button onclick="toggleModal('editProfileModal')"
+                class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Edit Profil</button>
+            <button onclick="toggleModal('changePasswordModal')"
+                class="w-full py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Ubah Kata Sandi</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-black via-gray-800 to-black p-4 mt-auto">
+        <div class="container mx-auto text-center text-white">
+            <p>&copy; 2024 SumaTransport. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Modal Edit Profil -->
-    <div class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="editProfileModal">
-        <div class="bg-gray-800 text-white rounded-lg shadow-xl w-full max-w-md">
+    <div id="editProfileModal" class="modal hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white rounded shadow-lg max-w-sm w-full p-6">
+            <h3 class="text-lg font-semibold mb-4">Edit Profil</h3>
             <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="px-6 py-4 border-b border-gray-700 flex justify-between items-center">
-                    <h5 class="text-xl font-semibold">Edit Profil</h5>
-                    <button type="button" class="text-gray-400 hover:text-gray-300" onclick="toggleModal('editProfileModal')">
-                        <i class="fas fa-times"></i>
-                    </button>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium">Nama</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 border rounded"
+                        value="{{ Auth::user()->name }}" required>
                 </div>
-                <div class="p-6">
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium mb-2">Nama</label>
-                        <input type="text" id="name" name="name" class="bg-gray-700 text-white p-3 rounded w-full"
-                            value="{{ Auth::user()->name }}" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="avatar" class="block text-sm font-medium mb-2">Foto Profil</label>
-                        <input type="file" id="avatar" name="avatar" class="bg-gray-700 text-white p-3 rounded w-full">
-                    </div>
+                <div class="mb-4">
+                    <label for="avatar" class="block text-sm font-medium">Foto Profil</label>
+                    <input type="file" id="avatar" name="avatar" class="w-full p-2 border rounded">
                 </div>
-                <div class="flex justify-end p-4 border-t border-gray-700">
-                    <button type="button" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded mr-2"
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="px-4 py-2 bg-gray-500 text-white rounded"
                         onclick="toggleModal('editProfileModal')">Batal</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Simpan</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Simpan</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Modal Ubah Kata Sandi -->
-    <div id="changePasswordModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-gray-800 text-white rounded-lg shadow-xl w-full max-w-md">
-            <!-- Form Ubah Kata Sandi -->
+    <div id="changePasswordModal" class="modal hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white rounded shadow-lg max-w-sm w-full p-6">
+            <h3 class="text-lg font-semibold mb-4">Ubah Kata Sandi</h3>
             <form action="{{ route('password.update') }}" method="POST">
                 @csrf
                 <div class="mb-4">
-                    <label for="current_password" class="block text-sm font-medium mb-2">Kata Sandi Lama</label>
-                    <input type="password" id="current_password" name="current_password"
-                        class="bg-gray-700 text-white p-3 rounded w-full" required>
+                    <label for="current_password" class="block text-sm font-medium">Kata Sandi Lama</label>
+                    <input type="password" id="current_password" name="current_password" class="w-full p-2 border rounded"
+                        required>
                 </div>
                 <div class="mb-4">
-                    <label for="new_password" class="block text-sm font-medium mb-2">Kata Sandi Baru</label>
-                    <input type="password" id="new_password" name="new_password" class="bg-gray-700 text-white p-3 rounded w-full" required>
+                    <label for="new_password" class="block text-sm font-medium">Kata Sandi Baru</label>
+                    <input type="password" id="new_password" name="new_password" class="w-full p-2 border rounded"
+                        required>
                 </div>
                 <div class="mb-4">
-                    <label for="new_password_confirmation" class="block text-sm font-medium mb-2">Konfirmasi Kata Sandi Baru</label>
+                    <label for="new_password_confirmation" class="block text-sm font-medium">Konfirmasi Kata Sandi Baru</label>
                     <input type="password" id="new_password_confirmation" name="new_password_confirmation"
-                        class="bg-gray-700 text-white p-3 rounded w-full" required>
+                        class="w-full p-2 border rounded" required>
                 </div>
-                <div class="flex justify-end p-4 border-t border-gray-700">
-                    <button type="button" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded mr-2"
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="px-4 py-2 bg-gray-500 text-white rounded"
                         onclick="toggleModal('changePasswordModal')">Batal</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Simpan</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Simpan</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Script -->
     <script>
         function toggleModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.toggle('hidden');
         }
+
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.getElementById('navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('hidden');
+        });
     </script>
 </body>
-
-<script>
-    setTimeout(() => {
-        const alerts = document.querySelectorAll('.container .bg-green-500, .container .bg-red-500');
-        alerts.forEach(alert => alert.remove());
-    }, 5000); 
-</script>
-
 </html>
