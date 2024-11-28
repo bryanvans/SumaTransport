@@ -50,9 +50,10 @@ Route::controller(BusController::class)->group(function () {
 
 // Rute untuk halaman QnA
 Route::controller(QnAController::class)->group(function () {
-    Route::get('qna', 'index')->name('qna');
+    Route::get('qna', 'index')->name('qna.index'); // This defines the 'qna.index' route
     Route::post('qna', 'store')->name('qna.store');
 });
+
 
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
