@@ -57,11 +57,28 @@ Route::controller(QnAController::class)->group(function () {
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
+})->name('dashboard');
+
+Route::get('/bus', function () {
+    return view('bus');
 });
 
-Route::get('/homepage', function () {
-    return view('homepage');
-});
+Route::get('/jadwalbus', function () {
+    return view('jadwalbus');
+})->name('jadwalbus');
+
+// routes/web.php
+Route::get('/rutebus', function () {
+    return view('rutebus');
+})->name('rutebus');
+
+Route::get('/busdashboard', function () {
+    return view('busdashboard');
+})->name('busdashboard');
+
+Route::get('/qnadashboard', function () {
+    return view('qnadashboard');
+})->name('qnadashboard');
 
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {

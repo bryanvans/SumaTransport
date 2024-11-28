@@ -39,7 +39,6 @@
         <a href="home" class="sitename"></a>
         </h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
     <ul>
         <li><a href="home" class="active">Beranda</a></li>
@@ -120,7 +119,7 @@
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="homepage\img\clients\KPT.webp" class="img-fluid" alt="">
           </div><!-- End Client Item -->
-
+  
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="homepage\img\clients\Tiomaz.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
