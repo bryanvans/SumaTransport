@@ -40,6 +40,8 @@
   --contrast-color: #ffffff;
 }
 
+
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -452,6 +454,7 @@ h6 {
     display: block;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Global Footer

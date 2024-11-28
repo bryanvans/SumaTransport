@@ -12,7 +12,7 @@
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 1)), 
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 1)),
                               url('image/Background.jpeg');
             background-size: cover;
             background-position: center;
@@ -23,10 +23,10 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-black via-gray-800 to-black p-4">
+    <nav class="bg-black bg-opacity-70 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a class="text-2xl font-bold text-white hover:text-gray-400 transition" href="home">SumaTransport</a>
-            <button class="text-white block lg:hidden" id="navbar-toggle">
+            <a class="text-2xl font-bold text-white" href="home">SumaTransport</a>
+            <button id="navbar-toggle" class="text-white text-2xl block lg:hidden">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
@@ -78,27 +78,13 @@
                     <label for="password_confirmation" class="block text-gray-300 text-sm font-bold mb-2">Konfirmasi Password</label>
                     <input type="password" id="password_confirmation" name="password_confirmation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Konfirmasi password anda" required>
                 </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Register</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Daftar</button>
             </form>
-            <div class="text-center mt-4">
-                <p class="text-gray-400">Atau daftar dengan:</p>
-                <a href="{{ url('auth/google') }}" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full w-full mt-4 transition duration-300 ease-in-out shadow-md hover:shadow-lg">
-                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-6 h-6 mr-2">
-                    Daftar dengan Google
-                </a>
-            </div>
             <div class="text-center mt-4">
                 <p class="text-gray-400">Sudah memiliki akun? <a href="login" class="text-blue-400 hover:text-blue-600">Login sekarang</a></p>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-black via-gray-800 to-black p-4">
-        <div class="container mx-auto text-center text-white">
-            <p>&copy; 2024 SumaTransport. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script>
         const navbarToggle = document.getElementById('navbar-toggle');
