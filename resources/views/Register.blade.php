@@ -16,7 +16,7 @@
             background-repeat: no-repeat;
         }
     </style>
-</head>  
+</head>
 <body class="bg-gray-900 bg-opacity-75">
     <!-- Navbar (Updated Header) -->
     <nav class="bg-black bg-opacity-70 p-4">

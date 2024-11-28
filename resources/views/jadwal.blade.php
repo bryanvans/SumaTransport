@@ -230,13 +230,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-black via-gray-800 to-black p-4 mt-10">
-        <div class="container mx-auto text-center text-white">
-            <p>&copy; 2021 SumaTransport. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script>
         // Toggle Hamburger Menu
         document.getElementById('menu-toggle').addEventListener('click', function () {
