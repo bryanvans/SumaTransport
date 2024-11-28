@@ -6,6 +6,7 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,19 +57,28 @@ Route::controller(QnAController::class)->group(function () {
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
 Route::get('/bus', function () {
     return view('bus');
 });
 
-Route::get('/logindashboard', function () {
-    return view('logindashboard');
-})->name('logindashboard');
+Route::get('/jadwalbus', function () {
+    return view('jadwalbus');
+})->name('jadwalbus');
 
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
+// routes/web.php
+Route::get('/rutebus', function () {
+    return view('rutebus');
+})->name('rutebus');
+
+Route::get('/busdashboard', function () {
+    return view('busdashboard');
+})->name('busdashboard');
+
+Route::get('/qnadashboard', function () {
+    return view('qnadashboard');
+})->name('qnadashboard');
 
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
@@ -79,3 +89,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/profile', 'deleteAccount')->name('profile.delete'); // Delete Profil
     });
 });
+
+// Rute untuk login/register dengan Google
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

@@ -6,7 +6,7 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard | SumaTransport</title>
+        <title>Dashboard </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -26,7 +26,9 @@
         <!-- App Css-->
         <link href="{{asset('dashboardassets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
-    </head>
+        <!-- Menambahkan FontAwesome CDN -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
 
     <body>
 
@@ -43,19 +45,19 @@
                         <div class="navbar-brand-box">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{asset('dashboardassets/images/logo-sm.svg')}}" alt="" height="24">
+                                    <img src="{{asset('dashboardassets/images/bus-icon.svg')}}" alt="" height="24">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('dashboardassets/images/logo-sm.svg')}}" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
+                                    <img src="{{asset('dashboardassets/images/bus-icon.svg')}}" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{asset('dashboardassets/images/logo-sm.svg')}}" alt="" height="24">
+                                    <img src="{{asset('dashboardassets/images/bus-icon.svg')}}" alt="" height="24">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('dashboardassets/images/logo-sm.svg')}}" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
+                                    <img src="{{asset('dashboardassets/images/bus-icon.svg')}}" alt="" height="24"> <span class="logo-txt">SumaTransport</span>
                                 </span>
                             </a>
                         </div>
@@ -98,13 +100,13 @@
                         <div class="dropdown d-none d-sm-inline-block">
                             <button type="button" class="btn header-item"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="header-lang-img" src="{{asset('dashboardassets/images/flags/us.jpg')}}" alt="Header Language" height="16">
+                                <img id="header-lang-img" src="{{asset('dashboardassets/images/flags/indonesia.jpg')}}" alt="Header Language" height="16">
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
-                                    <img src="{{asset('dashboardassets/images/flags/us.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                                    <img src="{{asset('dashboardassets/images/flags/indonesia.jpg')}}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Indonesia</span>
                                 </a>
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
@@ -135,63 +137,10 @@
                             </button>
                         </div>
 
-                        <div class="dropdown d-none d-lg-inline-block ms-1">
-                            <button type="button" class="btn header-item"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i data-feather="grid" class="icon-lg"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/github.png')}}" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/bitbucket.png')}}" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/dribbble.png')}}" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/dropbox.png')}}" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/mail_chimp.png')}}" alt="mail_chimp">
-                                                <span>Mail Chimp</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="{{asset('dashboardassets/images/brands/slack.png')}}" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i data-feather="bell" class="icon-lg"></i>
-                                <span class="badge bg-danger rounded-pill">5</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
@@ -207,65 +156,15 @@
                                 </div>
                                 <div data-simplebar style="max-height: 230px;">
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{asset('assets/images/users/avatar-3.jpg')}}" class="rounded-circle avatar-sm" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">James Lemire</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">It will seem like simplified English.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>1 hour ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
                                     <a href="#!" class="text-reset notification-item">
                                         <div class="d-flex">
-                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                                    <i class="bx bx-cart"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your order is placed</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>3 min ago</span></p>
-                                                </div>
-                                            </div>
                                         </div>
                                     </a>
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                    <i class="bx bx-badge-check"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your item is shipped</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>3 min ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
 
                                     <a href="#!" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{asset('dashboardassets/images/users/avatar-6.jpg')}}" class="rounded-circle avatar-sm" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Salena Layfield</h6>
-                                                <div class="font-size-13 text-muted">
-                                                    <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span>1 hour ago</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </a>
                                 </div>
                                 <div class="p-2 border-top d-grid">
@@ -293,9 +192,13 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <a class="dropdown-item" href="apps-contacts-profile.html"><i class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>
-                                <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock Screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logindashboard') }}"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                                <form action="{{ route('logout') }}" method="POST" style="display: inline;"> @csrf
+                                    <button type="submit" class="dropdown-item" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                        <i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout
+                                    </button>
+                                </form>
+
                             </div>
                         </div>
 
@@ -312,8 +215,6 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" data-key="t-menu">Menu</li>
-
                             <li>
                                 <a href="/dashboard">
                                     <i data-feather="home"></i>
@@ -321,25 +222,25 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/bus">
-                                    <i data-feather="bus"></i>
+                                <a href="/busdashboard">
+                                     <i data-feather= "truck"></i>
                                     <span data-key="t-dashboard">Bus</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/jadwalbus">
                                     <i data-feather="calendar"></i>
                                     <span data-key="t-dashboard">Jadwal</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/rutebus">
                                     <i data-feather="map"></i>
                                     <span data-key="t-dashboard">Rute</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href="/qnadashboard">
                                     <i data-feather="help-circle"></i>
                                     <span data-key="t-dashboard">QnA</span>
                                 </a>
@@ -372,8 +273,13 @@
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
+                                        <li class="breadcrumb-item">
+                                            <a href="javascript:void(0);" onclick="window.location.href='/dashboard';">Dashboard</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">
+                                            <a href="javascript:void(0);" onclick="window.location.href='/dashboard';">Dashboard</a>
+                                        </li>
+
                                         </ol>
                                     </div>
 
@@ -505,17 +411,17 @@
                                                 <div class="mt-4 mt-sm-0">
                                                     <div>
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-success"></i> KBT</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">196</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">1.166</span></h6>
                                                     </div>
     
                                                     <div class="mt-4 pt-2">
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i> Karya Agung</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">43</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">250</span></h6>
                                                     </div>
     
                                                     <div class="mt-4 pt-2">
                                                         <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-info"></i> KPT</p>
-                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">87</span></h6>
+                                                        <h6>Jumlah Penumpang = <span class="text-muted font-size-14 fw-normal">584</span></h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -561,7 +467,7 @@
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <p class="mb-2 text-muted text-uppercase font-size-11">Total Passengers</p>
-                                                                        <h5 class="fw-medium">2632</h5>
+                                                                        <h5 class="fw-medium">2000</h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">
@@ -601,7 +507,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>Karya</b> Agung</h4>
                                                                 <p class="text-white-50 font-size-13">Karya Agung menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                 Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->
@@ -616,7 +521,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>KPT</b></h4>
                                                                 <p class="text-white-50 font-size-13">KPT menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                 Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->
@@ -631,7 +535,6 @@
                                                                 <h4 class="mt-3 lh-base fw-normal text-white"><b>KBT</b></h4>
                                                                 <p class="text-white-50 font-size-13">KBT menyediakan layanan perjalanan yang nyaman dan handal di wilayah Danau Toba. 
                                                                     Dapatkan informasi terbaru tentang rute, jadwal, dan peningkatan layanan kami.</p>
-                                                                <button type="button" class="btn btn-light btn-sm">View details <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                             </div>
                                                         </div>
                                                         <!-- end carousel-item -->
@@ -688,7 +591,7 @@
             <div data-simplebar class="h-100">
                 <div class="rightbar-title d-flex align-items-center p-3">
 
-                    <h5 class="m-0 me-2">Setting</h5>
+                    
 
                     <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
                         <i class="mdi mdi-close noti-icon"></i>
@@ -699,117 +602,73 @@
                 <hr class="m-0" />
 
                 <div class="p-4">
-                    <h6 class="mb-3">Layout</h6>
-                    <div class="form-check form-check-inline">
+                    
+                    
                         <input class="form-check-input" type="radio" name="layout"
                             id="layout-vertical" value="vertical">
-                        <label class="form-check-label" for="layout-vertical">Vertical</label>
-                    </div>
-                    <div class="form-check form-check-inline">
+                    
                         <input class="form-check-input" type="radio" name="layout"
                             id="layout-horizontal" value="horizontal">
-                        <label class="form-check-label" for="layout-horizontal">Horizontal</label>
-                    </div>
 
-                    <h6 class="mt-4 mb-3 pt-2">Layout Mode</h6>
-
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-mode"
                             id="layout-mode-light" value="light">
-                        <label class="form-check-label" for="layout-mode-light">Light</label>
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-mode"
                             id="layout-mode-dark" value="dark">
-                        <label class="form-check-label" for="layout-mode-dark">Dark</label>
-                    </div>
 
-                    <h6 class="mt-4 mb-3 pt-2">Layout Width</h6>
+                    
 
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-width"
                             id="layout-width-fuild" value="fuild" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
-                        <label class="form-check-label" for="layout-width-fuild">Fluid</label>
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-width"
                             id="layout-width-boxed" value="boxed" onchange="document.body.setAttribute('data-layout-size', 'boxed')">
-                        <label class="form-check-label" for="layout-width-boxed">Boxed</label>
-                    </div>
-
-                    <h6 class="mt-4 mb-3 pt-2">Layout Position</h6>
-
-                    <div class="form-check form-check-inline">
+                    
                         <input class="form-check-input" type="radio" name="layout-position"
                             id="layout-position-fixed" value="fixed" onchange="document.body.setAttribute('data-layout-scrollable', 'false')">
-                        <label class="form-check-label" for="layout-position-fixed">Fixed</label>
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-position"
                             id="layout-position-scrollable" value="scrollable" onchange="document.body.setAttribute('data-layout-scrollable', 'true')">
-                        <label class="form-check-label" for="layout-position-scrollable">Scrollable</label>
-                    </div>
 
-                    <h6 class="mt-4 mb-3 pt-2">Topbar Color</h6>
-
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="topbar-color"
                             id="topbar-color-light" value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
-                        <label class="form-check-label" for="topbar-color-light">Light</label>
-                    </div>
-                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="topbar-color"
                             id="topbar-color-dark" value="dark" onchange="document.body.setAttribute('data-topbar', 'dark')">
-                        <label class="form-check-label" for="topbar-color-dark">Dark</label>
-                    </div>
-
-                    <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Size</h6>
 
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-default" value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
-                        <label class="form-check-label" for="sidebar-size-default">Default</label>
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-compact" value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'md')">
-                        <label class="form-check-label" for="sidebar-size-compact">Compact</label>
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-size"
                             id="sidebar-size-small" value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
-                        <label class="form-check-label" for="sidebar-size-small">Small (Icon View)</label>
                     </div>
 
-                    <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Color</h6>
+                    
 
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-light" value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
-                        <label class="form-check-label" for="sidebar-color-light">Light</label>
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-dark" value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
-                        <label class="form-check-label" for="sidebar-color-dark">Dark</label>
                     </div>
                     <div class="form-check sidebar-setting">
                         <input class="form-check-input" type="radio" name="sidebar-color"
                             id="sidebar-color-brand" value="brand" onchange="document.body.setAttribute('data-sidebar', 'brand')">
-                        <label class="form-check-label" for="sidebar-color-brand">Brand</label>
                     </div>
 
-                    <h6 class="mt-4 mb-3 pt-2">Direction</h6>
+                    
 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-direction"
                             id="layout-direction-ltr" value="ltr">
-                        <label class="form-check-label" for="layout-direction-ltr">LTR</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="layout-direction"
                             id="layout-direction-rtl" value="rtl">
-                        <label class="form-check-label" for="layout-direction-rtl">RTL</label>
                     </div>
 
                 </div>

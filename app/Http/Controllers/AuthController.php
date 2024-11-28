@@ -69,3 +69,4 @@ class AuthController extends Controller
         return redirect()->route('login')->with('success', 'Anda telah berhasil logout.');
     }
 }
+
