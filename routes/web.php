@@ -6,6 +6,7 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ Route::controller(QnAController::class)->group(function () {
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
 Route::get('/bus', function () {
     return view('bus');
@@ -79,21 +80,6 @@ Route::get('/qnadashboard', function () {
     return view('qnadashboard');
 })->name('qnadashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');  
-
-Route::get('/rutebus', function () {
-    return view('rutebus');
-})->name('rutebus');
-
-Route::get('/qnadashboard', function () {
-    return view('qnadashboard');
-})->name('qnadashboard');
-
-Route::get('/jadwalbus', function () {
-    return view('jadwalbus');
-})->name('jadwalbus');
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
     Route::controller(UserController::class)->group(function () {
@@ -104,6 +90,6 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-
-
-
+// Rute untuk login/register dengan Google
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
