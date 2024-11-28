@@ -2,21 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Route extends Model
 {
-    use HasFactory;
-
-    public function bus() {
+    // Menambahkan relasi belongsTo untuk bus
+    public function bus()
+    {
         return $this->belongsTo(Bus::class);
     }
 
-    public function facilities() {
-        return $this->bus->facilities();
+    // Jika ingin menambahkan fasilitas (facilities) untuk bus
+    public function busFacilities()
+    {
+        return $this->hasManyThrough(Facility::class, Bus::class);
     }
 }
+
+
 
 
 

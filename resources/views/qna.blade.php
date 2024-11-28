@@ -47,82 +47,56 @@
 <body class="bg-gray-900 bg-opacity-75">
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-black via-gray-800 to-black p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a class="text-2xl font-bold text-white hover:text-gray-400 transition" href="home">SumaTransport</a>
-            <button class="text-white block lg:hidden" id="navbar-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
-                <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="home">Beranda</a></li>
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="jadwal">Jadwal</a></li>
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="rute">Rute</a></li>
-                    <li class="relative group">
-                        <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
-                        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
-                            <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kbt">KBT</a></li>
-                            <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kpt">KPT</a></li>
-                            <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="tiomaz">Tiomaz</a></li>
-                            <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="karyaagung">Karya Agung</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="qna">QnA</a></li>
-                    @auth
-                    <li class="relative group">
-                        <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition flex items-center" href="#">
-                            <img src="{{ Auth::user()->avatar ?? asset('default-avatar.png') }}" alt="Avatar" class="rounded-full w-8 h-8 mr-2">
-                            {{ Auth::user()->name }} <i class="fas fa-chevron-down ml-2"></i>
-                        </a>
-                        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
-                            <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="{{ route('profile.show') }}">Profil Saya</a></li>
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                                    @csrf
-                                    <button type="submit" class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block text-left w-full">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @endauth
-                    @guest
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="login">Login</a></li>
-                    <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="register">Register</a></li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hamburger Menu Overlay -->
-    <div id="menu-overlay" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-        <div class="bg-white w-3/4 p-4 rounded-lg relative">
-            <ul class="space-y-2">
-                <li><a href="home" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Beranda</a></li>
-                <li><a href="jadwal" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Jadwal</a></li>
-                <li><a href="rute" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Rute</a></li>
+    <div class="container mx-auto flex justify-between items-center">
+        <a class="text-2xl font-bold text-white hover:text-gray-400 transition" href="home">SumaTransport</a>
+        <button class="text-white block lg:hidden" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="navbar-menu">
+            <ul class="lg:flex lg:justify-between text-base text-white pt-4 lg:pt-0">
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="home">Beranda</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="jadwal">Jadwal</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="rute">Rute</a></li>
                 <li class="relative group">
-                    <a class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
-                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black">
-                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-1 px-4 block" href="kbt">KBT</a></li>
-                        <li><a class="bg-gray-200 hover:bg-gray-400 py-1 px-4 block" href="kpt">KPT</a></li>
-                        <li><a class="bg-gray-200 hover:bg-gray-400 py-1 px-4 block" href="tiomaz">Tiomaz</a></li>
-                        <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-1 px-4 block" href="karyaagung">Karya Agung</a></li>
+                    <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
+                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kbt">KBT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="kpt">KPT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="tiomaz">Tiomaz</a></li>
+                        <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="karyaagung">Karya Agung</a></li>
                     </ul>
                 </li>
-                <li><a href="qna" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">QnA</a></li>
-                <li><a href="login" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Login</a></li>
-                <li><a href="register" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Register</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="qna">QnA</a></li>
+                @auth
+                <li class="relative group">
+                    <a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition flex items-center" href="#">
+                        <img src="{{ Auth::user()->avatar ?? asset('default-avatar.png') }}" alt="Avatar" class="rounded-full w-8 h-8 mr-2">
+                        {{ Auth::user()->name }} <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black shadow-lg rounded">
+                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block" href="{{ route('profile.show') }}">Profil Saya</a></li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit" class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block text-left w-full">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                @endauth
+                @guest
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="login">Login</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block hover:bg-gray-700 transition" href="register">Register</a></li>
+                @endguest
             </ul>
         </div>
-        <!-- Close Button -->
-        <button id="close-menu" class="text-white hover:text-gray-300 absolute top-24 right-12 text-2xl bg-gray-800 rounded-full p-2">
-            &times;
-        </button>
     </div>
+</nav>
 
     <!-- QnA Section -->
     <div class="container mx-auto mt-16 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-4xl">
         <h1 class="text-3xl font-bold text-center mb-6 text-white">Tanya Kami</h1>
+
         @auth
         <form action="{{ route('qna.store') }}" method="POST">
             @csrf
@@ -135,6 +109,22 @@
         @else
         <p class="text-white text-center">Silakan <a href="login" class="text-blue-400 hover:underline">login</a> untuk mengirim pertanyaan.</p>
         @endauth
+
+        <!-- Display Questions -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-white mb-4">Pertanyaan yang Diajukan</h2>
+            @if ($questions->isEmpty())
+                <p class="text-gray-300">Belum ada pertanyaan yang diajukan.</p>
+            @else
+                <ul class="space-y-4">
+                    @foreach ($questions as $question)
+                        <li class="bg-gray-700 p-4 rounded-md shadow-md">
+                            <p class="text-gray-300">{{ $question->question }}</p>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
     </div>
 
     <!-- Footer -->
