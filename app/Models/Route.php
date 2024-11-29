@@ -2,25 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Route extends Model
 {
-    // Menambahkan relasi belongsTo untuk bus
-    public function bus()
-    {
-        return $this->belongsTo(Bus::class);
-    }
+    use HasFactory;
 
-    // Jika ingin menambahkan fasilitas (facilities) untuk bus
-    public function busFacilities()
+    // Nama tabel jika tidak mengikuti konvensi Laravel (opsional)
+    protected $table = 'routes';
+
+    // Kolom yang dapat diisi (mass assignable)
+    protected $fillable = [
+        'start_point',
+        'end_point',
+    ];
+
+    // Relasi dengan bus jika diperlukan (opsional)
+    public function buses()
     {
-        return $this->hasManyThrough(Facility::class, Bus::class);
+        return $this->hasMany(Bus::class);
     }
 }
-
-
-
-
-
-
