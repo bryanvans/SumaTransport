@@ -79,40 +79,41 @@
 </div>
 
     <!-- Form Login (tetap tampil untuk layar besar) -->
-    <div class="container mx-auto mt-16 p-4 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-md">
-    <h1 class="text-4xl font-bold text-center mb-6 text-white">Login</h1>
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-        @if (session('error'))
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                <span class="block sm:inline">{{ session('error') }}</span>
+<div class="flex items-start justify-center min-h-screen px-4 pt-8"> <!-- Menambahkan padding-top -->
+    <div class="container mx-auto mt-16 p-4 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-md w-full lg:w-2/3 xl:w-1/2">
+        <h1 class="text-4xl font-bold text-center mb-6 text-white">Login</h1>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            @if (session('error'))
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <span class="block sm:inline">{{ session('error') }}</span>
+                </div>
+            @endif
+            <div class="mb-4">
+                <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Masukkan Email Anda" required>
             </div>
-        @endif
-        <div class="mb-4">
-            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
-            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Email Anda" required>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
+                <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Masukkan Password Anda" required>
+            </div>
+            <div class="flex items-center justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transform hover:scale-105 transition-all duration-300 ease-in-out w-full">Login</button>
+            </div>                           
+            <!-- Tombol Login dengan Google -->
+            <a href="/auth/google" class="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full w-full mt-4 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transform hover:scale-105">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-6 h-6 mr-2">
+                Login dengan Google
+            </a>
+        </form>
+        <!-- Tambahan: Belum punya akun -->
+        <div class="text-center mt-6">
+            <p class="text-gray-400">Belum punya akun? 
+                <a href="register" class="text-blue-400 hover:text-blue-600 transition font-semibold">Daftar sekarang</a>
+            </p>
         </div>
-        <div class="mb-4">
-            <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-            <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password Anda" required>
-        </div>
-        <div class="flex items-center justify-center">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
-        </div>
-        <!-- Tombol Login dengan Google -->
-        <a href="/auth/google" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full w-full mt-4 transition duration-300 ease-in-out shadow-md hover:shadow-lg">
-            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-6 h-6 mr-2">
-            Login dengan Google
-        </a>
-    </form>
-    <!-- Tambahan: Belum punya akun -->
-    <div class="text-center mt-6">
-        <p class="text-gray-400">Belum punya akun? 
-            <a href="register" class="text-blue-400 hover:text-blue-600 transition font-semibold">Daftar sekarang</a>
-        </p>
     </div>
 </div>
-
 
     <!-- JavaScript -->
     <script>

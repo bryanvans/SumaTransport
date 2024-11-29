@@ -11,7 +11,7 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-image: url('image/Background.jpeg');
-    background-size: cover; /* Pastikan background menutupi seluruh halaman */
+    background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden; 
@@ -76,49 +76,69 @@
         </button>
     </div>
 
-     <!-- Register Form -->
-     <div class="flex items-center justify-center min-h-screen">
-    <div class="bg-gray-900 bg-opacity-90 rounded-lg shadow-lg p-6 max-w-lg w-full lg:w-2/3 xl:w-1/2">
-        <h1 class="text-4xl font-bold text-center mb-6 text-white">Daftar Akun</h1>
+    <!-- Register Form -->
+<div class="flex items-start justify-center min-h-screen px-4 pt-8">
+    <div class="bg-gray-900 bg-opacity-90 rounded-lg shadow-lg p-6 max-w-md w-full lg:w-2/3 xl:w-1/2">
+        
+        <h1 class="text-2xl font-bold text-center mb-4 text-white">Daftar Akun</h1>
+        
         <form method="POST" action="{{ route('register') }}">
-                @csrf
-                @if (session('error'))
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                    <span class="block sm:inline">{{ session('error') }}</span>
-                </div>
-                @endif
-                <div class="mb-4">
-                <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Nama</label>
-                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan nama anda" required>
-                </div>
-                <div class="mb-4">
-                <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan email anda" required>
-                </div>
-                <div class="mb-4">
-                <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-                    <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan password anda" required>
-                </div>
-                <div class="mb-4">
-                <label for="password_confirmation" class="block text-gray-300 text-sm font-bold mb-2">Konfirmasi Password</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Konfirmasi password anda" required>
-                </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Register</button>
-            </form>
-            <div class="text-center mt-4">
-                <p class="text-gray-400">Atau daftar dengan:</p>
-                <a href="{{ url('auth/google') }}" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full w-full mt-4 transition duration-300 ease-in-out shadow-md hover:shadow-lg">
-                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-6 h-6 mr-2">
-                    Daftar dengan Google
-                </a>
+            @csrf
+            @if (session('error'))
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                <span class="block sm:inline">{{ session('error') }}</span>
             </div>
-            <div class="text-center mt-4">
-            <p class="text-gray-400">Sudah memiliki akun? 
-                <a href="login" class="text-blue-400 hover:text-blue-600">Login sekarang</a>
+            @endif
+            
+            <!-- Form dengan label dan input -->
+            <div class="mb-4">
+                <label for="name" class="block text-gray-300 text-sm font-bold mb-1">Nama</label>
+                <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Masukkan nama anda" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="email" class="block text-gray-300 text-sm font-bold mb-1">Email</label>
+                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Masukkan email anda" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="password" class="block text-gray-300 text-sm font-bold mb-1">Password</label>
+                <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Masukkan password anda" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="password_confirmation" class="block text-gray-300 text-sm font-bold mb-1">Konfirmasi Password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out transform hover:scale-105" placeholder="Konfirmasi password anda" required>
+            </div>
+            
+            <!-- Tombol register -->
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transform hover:scale-105 transition-all duration-300 ease-in-out w-full">
+                Register
+            </button>
+        </form>
+ 
+
+        
+        <!-- Daftar dengan Google -->
+        <div class="text-center mt-4">
+     <p class="text-sm text-gray-400">Atau daftar dengan</p>
+     <a href="{{ url('auth/google') }}" class="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full w-full mt-4 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transform hover:scale-105">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" class="w-5 h-5 mr-2">
+        Daftar dengan Google
+     </a>
+     </div>
+
+        
+        <!-- Login link -->
+        <div class="text-center mt-4">
+            <p class="text-sm text-gray-400 font-bold">Sudah memiliki akun? 
+                <a href="login" class="text-blue-400 hover:text-blue-600 font-bold">Login sekarang</a>
             </p>
         </div>
     </div>
 </div>
+
+
 
     <script>
         document.getElementById('navbar-toggle').addEventListener('click', function () {
