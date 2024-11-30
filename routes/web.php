@@ -6,6 +6,8 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PenjadwalanBisController;
+use App\Http\Controllers\JadwalBusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +96,7 @@ Route::get('/qnadashboard', function () {
 Route::get('/jadwalbus', function () {
     return view('jadwalbus');
 })->name('jadwalbus');
+
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
     Route::controller(UserController::class)->group(function () {
@@ -103,6 +106,11 @@ Route::middleware('auth')->group(function () {
         Route::delete('/profile', 'deleteAccount')->name('profile.delete'); // Delete Profil
     });
 });
+
+Route::get('jadwalbus', [JadwalBusController::class, 'index'])->name('jadwalbus');
+
+
+
 
 
 

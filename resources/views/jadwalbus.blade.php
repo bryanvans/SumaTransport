@@ -281,17 +281,22 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Jadwal Bus</h4>
-                                        <p class="card-title-desc">
-                                            Keterangan ID Bus :<br>
-                                                                    111TI..... = Tiomaz<br>
-                                                                    121BT.... = KBT<br>
-                                                                    311PT.... = KPT<br>
-                                                                    466KA.... = Karya Agung
-                                        </p>
+                                <div class="card-header d-flex justify-content-between align-items-center">
+    <div>
+        <h4 class="card-title">Jadwal Bus</h4>
+        <p class="card-title-desc">
+            Keterangan ID Bus :<br>
+            111TI..... = Tiomaz<br>
+            121BT.... = KBT<br>
+            311PT.... = KPT<br>
+            466KA.... = Karya Agung
+        </p>
+    </div>
 
-                                    </div>
+    <!-- Tombol Tambah Data di paling kanan, dengan margin atas -->
+    <button type="button" class="btn btn-primary waves-effect waves-light mt-3">Tambah Data</button>
+</div>
+
                                     <div class="card-body">
         
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -310,17 +315,17 @@
                                             <tbody>
                                             <tr>
                                                 <td>121BT017</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 19.00</td>
+                                                <td>Medan</td>
+                                                <td>Laguboti</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 22.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
@@ -334,169 +339,169 @@
                                             </tr>
                                             <tr>
                                                 <td>121BT023</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 15.00</td>
+                                                <td>Laguboti</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT022</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 17.00</td>
+                                                <td>Medan</td>
+                                                <td>Siantar</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 18.00</td>
+                                                <td>Medan</td>
+                                                <td>Parapat</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 19.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 20.00</td>
+                                                <td>Medan</td>
+                                                <td>Balige</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 24.00</td>
+                                                <td>Medan</td>
+                                                <td>Siborongborong</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 22.00</td>
+                                                <td>Medan</td>
+                                                <td>Siborongborong</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 12.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08.00 - 12.00</td>
+                                                <td>Parapat</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI011</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 22.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI012</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 11.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI013</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08.00 - 13.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI014</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 17.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI015</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 17.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI016</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 22.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI003</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08:00 - 14.00</td>
+                                                <td>Medan</td>
+                                                <td>Balige</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI017</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 23.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI018</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08.00 - 15.00</td>
+                                                <td>Medan</td>
+                                                <td>Tarutung</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 19.00</td>
+                                                <td>Medan</td>
+                                                <td>Tarutung</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT021</td>
-                                                <td>09:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08:00 - 14.00</td>
+                                                <td>Siborongborong</td>
+                                                <td>Medan</td>
+                                                <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI019</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08:00 - 14.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
@@ -510,257 +515,257 @@
                                             </tr>
                                             <tr>
                                                 <td>111TI020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 22.00</td>
+                                                <td>Parapat</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 15.00</td>
+                                                <td>Laguboti</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI004</td>
-                                                <td>10.00</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 14.00</td>
+                                                <td>Parapat</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI022</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08:00 - 14.00</td>
+                                                <td>Siborongborong</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI023</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 18.00</td>
+                                                <td>Medan</td>
+                                                <td>Siborongborong</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI024</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08:00 - 15.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>111TI025</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 17.00</td>
+                                                <td>Medan</td>
+                                                <td>Tarutung</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 23.00</td>
+                                                <td>Medan</td>
+                                                <td>porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 21.00</td>
+                                                <td>Medan</td>
+                                                <td>Siantar</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 16.00</td>
+                                                <td>Medan</td>
+                                                <td>Parapat</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 17.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 17.00</td>
+                                                <td>Medan</td>
+                                                <td>Laguboti</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>12.00 - 18.00</td>
+                                                <td>Medan</td>
+                                                <td>Balige</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT001</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 22.00</td>
+                                                <td>Medan</td>
+                                                <td>Siborongborong</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT002</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 23.00</td>
+                                                <td>Medan</td>
+                                                <td>Tarutung</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT003</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>16.00 - 23.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT004</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 21.00</td>
+                                                <td>Medan</td>
+                                                <td>Siantar</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT025</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>18.00 - 22.00</td>
+                                                <td>Medan</td>
+                                                <td>Parapat</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 15.00</td>
+                                                <td>Laguboti</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 15.00</td>
+                                                <td>Porsea</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>10.00 - 16.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 12.00</td>
+                                                <td>Siborongborong</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 12.00</td>
+                                                <td>Medan</td>
+                                                <td>Balige</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>311PT010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 13.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA011</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 12.00</td>
+                                                <td>Siborongborong</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT024</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 20.00</td>
+                                                <td>Balige</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA012</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 19.00</td>
+                                                <td>Medan</td>
+                                                <td>Laguboti</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA013</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 21.00</td>
+                                                <td>Tarutung</td>
+                                                <td>Medan</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA014</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 17.00</td>
+                                                <td>Medan</td>
+                                                <td>Siantar</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>466KA015</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>14.00 - 19.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>06.00 - 11.00</td>
+                                                <td>Medan</td>
+                                                <td>Porsea</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>
                                             <tr>
                                                 <td>121BT018</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>08.00 - 13.00</td>
+                                                <td>Medan</td>
+                                                <td>Laguboti</td>
                                                 <td>20</td>
                                                 <td>27/11/2024</td>
                                             </tr>

@@ -23,6 +23,8 @@
         <link href="dashboardassets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="dashboardassets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <!--Leaflet Js-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     </head>
 
@@ -270,6 +272,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- end page title -->
                         
                     </div> <!-- container-fluid -->
@@ -416,6 +419,9 @@
         <script src="dashboardassets/libs/pace-js/pace.min.js"></script>
 
         <script src="dashboardassets/js/app.js"></script>
+        
+        <!--Leaflet Js-->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     </body>
 
