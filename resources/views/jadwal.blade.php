@@ -11,8 +11,7 @@
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 1)), 
-                              url('image/Background.jpeg');
+            background-image: url('image/Background.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -95,160 +94,58 @@
             <li><a href="login" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Login</a></li>
             <li><a href="register" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Register</a></li>
         </ul>
-    </div>  
+    </div>
         <!-- Close Button (Di luar kotak) -->
         <button id="close-menu" class="text-white hover:text-gray-300 absolute top-24 right-12 text-2xl bg-gray-800 rounded-full p-2">
             &times;
         </button>
 </div>
 
+
     <!-- Content -->
-    <div class="container mx-auto mt-10 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg">
+    <div class="container mx-auto mt-10 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-4xl">
         <h1 class="text-5xl font-bold text-center mb-8 text-white">Jadwal Bus</h1>
 
-        <!-- Tabel Jadwal -->
-        <div class="space-y-8">
-            <!-- Jadwal Bus KBT -->
-            <div>
-                <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus KBT</h2>
-                <table class="min-w-full bg-white rounded-lg overflow-hidden">
-                    <thead class="bg-gray-800">
-                        <tr>
-                            <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
-                            <th class="py-2 px-4 text-white">Kota Tujuan</th>
-                            <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($kbtRoutes as $route)
-                            <tr class="bg-gray-100 hover:bg-gray-300 transition">
-                                <td class="py-2 px-4">{{ $route->departure_city }}</td>
-                                <td class="py-2 px-4">{{ $route->arrival_city }}</td>
-                                <td class="py-2 px-4">{{ $route->departure_time }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <!-- Menampilkan Fasilitas -->
-                <h4 class="text-xl font-semibold mt-4 text-gray-300">Fasilitas</h4>
-                <ul class="list-disc list-inside text-white">
-                    @foreach ($kbtRoutes->first()->bus->facilities as $facility)
-                        <li>{{ $facility->facility_name }}</li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <!-- Jadwal Bus KPT -->
-            <div>
-                <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus KPT</h2>
-                <table class="min-w-full bg-white rounded-lg overflow-hidden">
-                    <thead class="bg-gray-800">
-                        <tr>
-                            <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
-                            <th class="py-2 px-4 text-white">Kota Tujuan</th>
-                            <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($kptRoutes as $route)
-                            <tr class="bg-gray-100 hover:bg-gray-300 transition">
-                                <td class="py-2 px-4">{{ $route->departure_city }}</td>
-                                <td class="py-2 px-4">{{ $route->arrival_city }}</td>
-                                <td class="py-2 px-4">{{ $route->departure_time }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <!-- Menampilkan Fasilitas -->
-                <h4 class="text-xl font-semibold mt-4 text-gray-300">Fasilitas</h4>
-                <ul class="list-disc list-inside text-white">
-                    @foreach ($kptRoutes->first()->bus->facilities as $facility)
-                        <li>{{ $facility->facility_name }}</li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <!-- Jadwal Bus Tiomaz -->
-            <div>
-                <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus Tiomaz</h2>
-                <table class="min-w-full bg-white rounded-lg overflow-hidden">
-                    <thead class="bg-gray-800">
-                        <tr>
-                            <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
-                            <th class="py-2 px-4 text-white">Kota Tujuan</th>
-                            <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($tiomazRoutes as $route)
-                            <tr class="bg-gray-100 hover:bg-gray-300 transition">
-                                <td class="py-2 px-4">{{ $route->departure_city }}</td>
-                                <td class="py-2 px-4">{{ $route->arrival_city }}</td>
-                                <td class="py-2 px-4">{{ $route->departure_time }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <!-- Menampilkan Fasilitas -->
-                <h4 class="text-xl font-semibold mt-4 text-gray-300">Fasilitas</h4>
-                <ul class="list-disc list-inside text-white">
-                    @foreach ($tiomazRoutes->first()->bus->facilities as $facility)
-                        <li>{{ $facility->facility_name }}</li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <!-- Jadwal Bus Karya Agung -->
-            <div>
-                <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus Karya Agung</h2>
-                <table class="min-w-full bg-white rounded-lg overflow-hidden">
-                    <thead class="bg-gray-800">
-                        <tr>
-                            <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
-                            <th class="py-2 px-4 text-white">Kota Tujuan</th>
-                            <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($karyaAgungRoutes as $route)
-                            <tr class="bg-gray-100 hover:bg-gray-300 transition">
-                                <td class="py-2 px-4">{{ $route->departure_city }}</td>
-                                <td class="py-2 px-4">{{ $route->arrival_city }}</td>
-                                <td class="py-2 px-4">{{ $route->departure_time }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <!-- Menampilkan Fasilitas -->
-                <h4 class="text-xl font-semibold mt-4 text-gray-300">Fasilitas</h4>
-                <ul class="list-disc list-inside text-white">
-                    @foreach ($karyaAgungRoutes->first()->bus->facilities as $facility)
-                        <li>{{ $facility->facility_name }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <!-- Jadwal Bus (Example for one route) -->
+        <div>
+            <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus KBT</h2>
+            <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                <thead class="bg-gray-800">
+                    <tr>
+                        <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
+                        <th class="py-2 px-4 text-white">Tujuan</th>
+                        <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr>
+                        <td class="py-2 px-4">Medan</td>
+                        <td class="py-2 px-4">Tarutung</td>
+                        <td class="py-2 px-4">10:00</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4">Medan</td>
+                        <td class="py-2 px-4">Toba</td>
+                        <td class="py-2 px-4">14:00</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-black via-gray-800 to-black p-4 mt-10">
-        <div class="container mx-auto text-center text-white">
-            <p>&copy; 2021 SumaTransport. All rights reserved.</p>
-        </div>
-    </footer>
+</script>   
+<script>
+    // Toggle Hamburger Menu
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        const menuOverlay = document.getElementById('menu-overlay');
+        menuOverlay.classList.toggle('hidden');
+    });
 
-    <script>
-        // Toggle Hamburger Menu
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menuOverlay = document.getElementById('menu-overlay');
-            menuOverlay.classList.toggle('hidden');
-        });
-
-        // Close Hamburger Menu
-        document.getElementById('close-menu').addEventListener('click', function () {
-            const menuOverlay = document.getElementById('menu-overlay');
-            menuOverlay.classList.add('hidden');
-        });
-    </script>
+    // Close Hamburger Menu
+    document.getElementById('close-menu').addEventListener('click', function () {
+        const menuOverlay = document.getElementById('menu-overlay');
+        menuOverlay.classList.add('hidden');
+    });
+</script>
 </body>
 </html>

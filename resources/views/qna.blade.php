@@ -15,6 +15,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            overflow: hidden;
         }
 
         table tbody tr:hover {
@@ -26,10 +27,9 @@
             transform: rotate(90deg);
             transition: transform 0.3s ease;
         }
-
     </style>
 </head>
-<body class="bg-gray-900 bg-opacity-75">
+<body class="h-screen flex flex-col bg-gray-900 bg-opacity-75">
     <!-- Navbar (Updated Header) -->
     <nav class="bg-black bg-opacity-70 p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -95,7 +95,7 @@
             <h1 class="text-3xl font-bold">Tanya Kami</h1>
         </div>
 
-        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 z-10">
+        <div class="max-w-4xl mx-auto mt-8 p-6 bg-blue-700 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
             @auth
                 <form action="{{ route('qna.store') }}" method="POST">
                     @csrf
@@ -131,7 +131,7 @@
                         </div>
                     </li>
                 @endforeach
-            </ul>   
+            </ul>
         </div>
     </div>
  <!-- Footer -->

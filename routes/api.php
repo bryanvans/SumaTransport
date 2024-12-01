@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\BusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/buses', [BusController::class, 'index']);
+Route::get('/routes', [RouteController::class, 'index']);
+
 

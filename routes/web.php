@@ -6,8 +6,8 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PenjadwalanBisController;
-use App\Http\Controllers\JadwalBusController;
+use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\BusScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,14 +51,15 @@ Route::controller(BusController::class)->group(function () {
 
 // Rute untuk halaman QnA
 Route::controller(QnAController::class)->group(function () {
-    Route::get('qna', 'index')->name('qna');
+    Route::get('qna', 'index')->name('qna.index'); // This defines the 'qna.index' route
     Route::post('qna', 'store')->name('qna.store');
 });
+
 
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
 Route::get('/bus', function () {
     return view('bus');
@@ -107,11 +108,14 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-Route::get('jadwalbus', [JadwalBusController::class, 'index'])->name('jadwalbus');
 
 
 
 
+// Rute untuk login/register dengan Google
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 
 
+Route::resource('bus-schedules', BusScheduleController::class);

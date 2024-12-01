@@ -169,14 +169,6 @@ function closeModal() {
     document.getElementById('imageModal').classList.add('hidden');
 }
 </script>   
-
-
-    <footer class="bg-black bg-opacity-70 p-4 mt-10">
-        <div class="container mx-auto text-center text-white">
-            <p>&copy; 2023 SumaTransport. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script>
         // Toggle Hamburger Menu
         document.getElementById('menu-toggle').addEventListener('click', function () {
