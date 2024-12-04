@@ -9,17 +9,18 @@ class CreateBusSchedulesTable extends Migration
     public function up()
     {
         Schema::create('bus_schedules', function (Blueprint $table) {
-            $table->id(); // ID primary key
-            $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
-            $table->time('departure_time'); // Waktu Keberangkatan
-            $table->time('arrival_time'); // Waktu Tiba
-            $table->string('from'); // Dari
-            $table->string('to'); // Tujuan
-            $table->integer('seat_count'); // Jumlah Kursi
-            $table->date('date'); // Tanggal
+            $table->id();
+            $table->string('id_bus');
+            $table->time('waktu_keberangkatan');
+            $table->time('waktu_tiba');
+            $table->string('dari');
+            $table->string('tujuan');
+            $table->integer('jumlah_kursi');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }
+    
 
     public function down()
     {

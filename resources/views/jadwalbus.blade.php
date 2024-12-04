@@ -72,10 +72,12 @@
 
                         <!-- App Search-->
                         <form class="app-search d-none d-lg-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
-                            </div>
+                        <div class="position-relative">
+    <input type="text" class="form-control" placeholder="Search...">
+    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+    </button>
+</div>
+
                         </form>
                     </div>
 
@@ -281,67 +283,54 @@
                         <!-- end page title -->
 
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
-    <div>
-        <h4 class="card-title">Jadwal Bus</h4>
-        <p class="card-title-desc">
-            Keterangan ID Bus :<br>
-            111TI..... = Tiomaz<br>
-            121BT.... = KBT<br>
-            311PT.... = KPT<br>
-            466KA.... = Karya Agung
-        </p>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="card-title">Jadwal Bus</h4>
+                    <p class="card-title-desc">
+                        Keterangan ID Bus :<br>
+                        111TI..... = Tiomaz<br>
+                        121BT.... = KBT<br>
+                        311PT.... = KPT<br>
+                        466KA.... = Karya Agung
+                    </p>
+                </div>
+
+                <!-- Tombol Tambah Data di paling kanan, dengan margin atas -->
+                <!-- Tombol untuk membuka modal -->
+                <button type="button" class="btn text-white waves-effect waves-light mt-3" data-bs-toggle="modal" data-bs-target="#addBusScheduleModal" style="background-color: #6f42c1; border: none;">
+                  Tambah Data
+               </button>
+
+
+
+            </div>
+
+            <!-- Table to display existing bus schedules, moved below the description section -->
+            <div class="container mt-4">
+                <h3>Jadwal Bus</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID Bus</th>
+                            <th>Waktu Keberangkatan</th>
+                            <th>Waktu Tiba</th>
+                            <th>Dari</th>
+                            <th>Tujuan</th>
+                            <th>Jumlah Kursi</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add your bus schedule data here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <!-- Tombol Tambah Data di paling kanan, dengan margin atas -->
-    <!-- Tombol untuk membuka modal -->
-<!-- Table to display existing bus schedules -->
-<div class="container mt-4">
-    <h3>Jadwal Bus</h3>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID Bus</th>
-                <th>Waktu Keberangkatan</th>
-                <th>Waktu Tiba</th>
-                <th>Dari</th>
-                <th>Tujuan</th>
-                <th>Jumlah Kursi</th>
-                <th>Tanggal</th>
-            </tr>
-        </thead>
-        @if ($busSchedule->isNotEmpty())
-    @foreach ($busSchedules as $schedule)
-        <tr>
-            <td>{{ $schedule->id_bus }}</td>
-            <td>{{ $schedule->waktu_keberangkatan }}</td>
-            <td>{{ $schedule->waktu_tiba }}</td>
-            <td>{{ $schedule->dari }}</td>
-            <td>{{ $schedule->tujuan }}</td>
-            <td>{{ $schedule->jumlah_kursi }}</td>
-            <td>{{ $schedule->tanggal }}</td>
-            <td>
-                <button class="btn btn-warning btn-sm">Edit</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </td>
-        </tr>
-    @endforeach
-@else
-    <tr>
-        <td colspan="8" class="text-center">Tidak ada jadwal bus tersedia.</td>
-    </tr>
-@endif
-
-
-    </table>
-
-    <!-- Button to trigger the modal for adding a new bus schedule -->
-    <button type="button" class="btn btn-primary waves-effect waves-light mt-3" data-bs-toggle="modal" data-bs-target="#addBusScheduleModal">
-        Tambah Data
-    </button>
 </div>
+
 
 <!-- Modal for adding a new bus schedule -->
 <div class="modal fade" id="addBusScheduleModal" tabindex="-1" aria-labelledby="addBusScheduleModalLabel" aria-hidden="true">
@@ -353,7 +342,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form for adding data -->
-                <form action="{{ route('bus-schedules.store') }}" method="POST">
+                <form id="addBusScheduleForm" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="id_bus">ID Bus</label>
@@ -383,12 +372,61 @@
                         <label for="tanggal">Tanggal</label>
                         <input type="date" id="tanggal" name="tanggal" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">Tambah Data</button>
+                    <button type="submit" class="btn mt-3 text-white" style="background-color: #6f42c1; border: none;">
+    Tambah Data
+</button>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Add the JavaScript below -->
+<script>
+    // When the form is submitted
+    $('#addBusScheduleForm').on('submit', function(event) {
+        event.preventDefault(); // Prevent normal form submission
+
+        // Prepare the data to be sent
+        var formData = new FormData(this);
+
+        // Perform AJAX request
+        $.ajax({
+            url: '{{ route('bus-schedules.store') }}', // The route that handles the form submission
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // On success, add the new bus schedule to the table
+                var newRow = '<tr>' +
+                    '<td>' + response.id_bus + '</td>' +
+                    '<td>' + response.waktu_keberangkatan + '</td>' +
+                    '<td>' + response.waktu_tiba + '</td>' +
+                    '<td>' + response.dari + '</td>' +
+                    '<td>' + response.tujuan + '</td>' +
+                    '<td>' + response.jumlah_kursi + '</td>' +
+                    '<td>' + response.tanggal + '</td>' +
+                    '</tr>';
+                
+                // Append the new row to the table
+                $('table tbody').append(newRow);
+
+                // Close the modal
+                $('#addBusScheduleModal').modal('hide');
+                
+                // Optionally, reset the form after submission
+                $('#addBusScheduleForm')[0].reset();
+            },
+            error: function(xhr, status, error) {
+                console.error('Error: ' + error);
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    });
+</script>
+
 
                                 </div>
                             </div> <!-- end col -->

@@ -7,7 +7,8 @@ use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\GoogleController;
-use App\Http\Controllers\BusScheduleController;
+use App\Http\Controllers\ScheduleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -119,3 +120,10 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 
 Route::resource('bus-schedules', BusScheduleController::class);
+
+
+Route::resource('schedules', ScheduleController::class);
+
+use App\Http\Controllers\BusScheduleController;
+
+Route::post('/bus-schedules', [BusScheduleController::class, 'store'])->name('bus-schedules.store');

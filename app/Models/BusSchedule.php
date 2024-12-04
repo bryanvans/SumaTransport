@@ -9,15 +9,17 @@ class BusSchedule extends Model
 {
     use HasFactory;
 
-    protected $table = 'bus_schedules'; // Nama tabel di database
+    // Define the table associated with the model (optional if it follows conventions)
+    protected $table = 'bus_schedules';
 
+    // Specify which fields can be mass-assigned
     protected $fillable = [
-        'id_bus', 
-        'waktu_keberangkatan', 
-        'waktu_tiba', 
-        'dari', 
-        'tujuan', 
-        'jumlah_kursi', 
-        'tanggal'
-    ];        
+        'id_bus',
+        'waktu_keberangkatan',
+        'waktu_tiba',
+        'dari',
+        'tujuan',
+        'jumlah_kursi',
+        'tanggal',
+    ];
 }

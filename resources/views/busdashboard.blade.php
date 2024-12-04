@@ -277,8 +277,60 @@
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
+                <div class="row align-items-center">
+<!-- Card 1 -->
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="kbtasset/images/slider/KBT EKS.webp" alt="Card image cap" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-body text-start"> <!-- Menggunakan kelas 'text-start' untuk menyelaraskan ke kiri -->
+            <h4 class="card-title">KBT</h4>
+            <p class="card-text">KBT menyediakan layanan transportasi bus antar Sumatra yang nyaman dan terpercaya, menghubungkan berbagai kota dengan jadwal yang fleksibel dan fasilitas lengkap untuk perjalanan Anda.</p>
+            <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light">Button</a>
+        </div>
+    </div>
+</div>
 
-                
+<!-- Card 2 -->
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="kptasset/images/slider/KPT11.jpg" alt="Card image cap" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-body text-start"> <!-- Menggunakan kelas 'text-start' untuk menyelaraskan ke kiri -->
+            <h4 class="card-title">KPT</h4>
+            <p class="card-text">KPT menawarkan layanan bus antar Sumatra dengan fokus pada keamanan dan efisiensi, menjadikan setiap perjalanan antar kota menjadi pengalaman yang nyaman dan terjangkau.</p>
+            <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light">Button</a>
+        </div>
+    </div>
+</div>
+
+<!-- Card 3 -->
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="tiomazasset/images/slider/tiomaz12.jpg" alt="Card image cap" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-body text-start"> <!-- Menggunakan kelas 'text-start' untuk menyelaraskan ke kiri -->
+            <h4 class="card-title">Tiomaz</h4>
+            <p class="card-text">Tiomaz menyediakan solusi transportasi bus di wilayah Sumatra dengan pelayanan profesional dan armada modern, memastikan perjalanan Anda nyaman dan tepat waktu.</p>
+            <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light">Button</a>
+        </div>
+    </div>
+</div>
+
+<!-- Card 4 -->
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="karyaagungasset/images/slider/ka11.jpg" alt="Card image cap" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-body text-start"> <!-- Menggunakan kelas 'text-start' untuk menyelaraskan ke kiri -->
+            <h4 class="card-title">Karya Agung</h4>
+            <p class="card-text">Karya Agung menghadirkan layanan bus antar Sumatra yang mengutamakan kenyamanan, keselamatan, dan kepuasan pelanggan, siap mengantar Anda ke tujuan dengan layanan terbaik.</p>
+            <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light">Button</a>
+        </div>
+    </div>
+    
+</div>
+
+
+
+</div>
+
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
