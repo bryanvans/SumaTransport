@@ -321,8 +321,7 @@
         <div class="card-body text-start"> <!-- Menggunakan kelas 'text-start' untuk menyelaraskan ke kiri -->
             <h4 class="card-title">Karya Agung</h4>
             <p class="card-text">Karya Agung menghadirkan layanan bus antar Sumatra yang mengutamakan kenyamanan, keselamatan, dan kepuasan pelanggan, siap mengantar Anda ke tujuan dengan layanan terbaik.</p>
-            <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light">Button</a>
-        </div>
+p        </div>
     </div>
     
 </div>

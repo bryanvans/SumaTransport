@@ -12,14 +12,14 @@ return new class extends Migration
     public function up()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('username')->nullable()->change(); // Ubah menjadi nullable
+        $table->string('name')->nullable()->change(); // Ubah menjadi nullable
     });
 }
 
 public function down()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('username')->nullable(false)->change(); // Kembalikan seperti semula
+        $table->string('name')->nullable(false)->change(); // Kembalikan seperti semula
     });
 }
 

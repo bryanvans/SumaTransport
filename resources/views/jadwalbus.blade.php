@@ -323,7 +323,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($buses as $buses)
+                        <tr>
+                            <td>{{ $buses['id_bus']}}</td>
+                            <td>{{ $buses['waktu_keberangkatan']}}</td>
+                            <td>{{ $buses['waktu_tiba']}}</td>
+                            <td>{{ $buses['dari']}}</td>
+                            <td>{{ $buses['tujuan']}}</td>
+                            <td>{{ $buses['jumlah_kursi']}}</td>
+                            <td>{{ $buses['tanggal']}}</td>
+
+                        </tr>
                         <!-- Add your bus schedule data here -->
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -342,7 +354,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form for adding data -->
-                <form id="addBusScheduleForm" method="POST">
+                <form id="addBusScheduleForm" method="POST" action="{{ route('jadwalbus.store') }}">
                     @csrf
                     <div class="form-group">
                         <label for="id_bus">ID Bus</label>

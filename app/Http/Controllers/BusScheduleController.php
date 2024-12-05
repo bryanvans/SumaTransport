@@ -9,6 +9,11 @@ class BusScheduleController extends Controller
 {
     // Other methods...
 
+    public function index() {
+        $buses = BusSchedule::all(); // Mengambil semua data bus dari tabel "buses"
+        return view('jadwalbus', compact('buses'));
+    }
+
     public function store(Request $request)
     {
         // Validate incoming data
@@ -25,7 +30,11 @@ class BusScheduleController extends Controller
         // Store the new bus schedule in the database
         $busSchedule = BusSchedule::create($request->all());
 
+        if ($request->expectsJson()) {
+            return response()->json($busSchedule);
+        }
+
         // Return the new bus schedule data as a response
-        return response()->json($busSchedule);
+        return redirect()->back()->with('success', 'Bus schedule added successfully!');
     }
 }

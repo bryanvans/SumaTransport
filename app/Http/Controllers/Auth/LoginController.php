@@ -10,6 +10,15 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
+        if (Auth::check()) {
+            // Cek usertype
+            if (Auth::user()->usertype === 'admin') {
+                return redirect()->route('admin.dashboard');
+            } elseif (Auth::user()->usertype === 'user') {
+                return redirect()->route('user.dashboard');
+            }
+        }
+    
         return view('login'); // Tampilan login
     }
 
