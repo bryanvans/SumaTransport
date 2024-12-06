@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
 
-class Chat extends Model
+class Answer extends Model
 {
     use HasFactory;
-}
 
-class Chat extends Model
-{
-    protected $fillable = ['user_id', 'message'];
+    protected $fillable = ['question_id', 'user_id', 'answer'];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 
     public function user()
     {

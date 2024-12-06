@@ -9,11 +9,13 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question', 'answer', 'user_id']; // Ganti 'user_name' dengan 'user_id'
+    // Kolom-kolom yang dapat diisi melalui mass assignment
+    protected $fillable = ['question'];
 
-    public function user()
+    public function answers()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Answer::class);
     }
 }
+
 

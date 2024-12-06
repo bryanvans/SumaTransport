@@ -116,23 +116,30 @@
         </div>
 
         <div class="max-w-4xl mx-auto mt-8 p-6 bg-gray-200 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Pertanyaan yang Sering Diajukan</h2>
-            <ul class="space-y-4">
-                @foreach($questions as $question)
-                    <li class="bg-white p-4 rounded-md shadow-md transform transition duration-500 hover:scale-105">
-                        <div class="flex items-center justify-between faq-toggle cursor-pointer">
-                            <div class="flex items-center">
-                                <i class="fas fa-plus mr-2 text-blue-500"></i>
-                                <span>{{ $question->question }}</span>
-                            </div>
-                        </div>
-                        <div class="hidden mt-2">
-                            <p>Jawaban untuk pertanyaan ini akan ditambahkan di sini.</p>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
+    <h2 class="text-2xl font-bold mb-4">Pertanyaan yang Sering Diajukan</h2>
+    <ul class="space-y-4">
+        @foreach($questions as $question)
+            <li class="bg-white p-4 rounded-md shadow-md transform transition duration-500 hover:scale-105">
+                <div class="flex items-center justify-between faq-toggle cursor-pointer">
+                    <div class="flex items-center">
+                        <i class="fas fa-plus mr-2 text-blue-500"></i>
+                        <span>{{ $question->question }}</span>
+                    </div>
+                </div>
+                <div class="hidden mt-2">
+                    @if($question->answers->isEmpty())
+                        <p>Belum ada jawaban untuk pertanyaan ini.</p>
+                    @else
+                        @foreach($question->answers as $answer)
+                            <p class="text-gray-800 mt-1">{{ $answer->answer }}</p>
+                        @endforeach
+                    @endif
+                </div>
+            </li>
+        @endforeach
+    </ul>
+</div>
+
     </div>
  <!-- Footer -->
  <footer class="bg-black bg-opacity-70 p-4 mt-10">

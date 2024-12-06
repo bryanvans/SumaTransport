@@ -17,6 +17,7 @@ class Bus extends Model
         'name',        // Nama bus
         'operator',    // Operator bus
         'capacity',    // Kapasitas penumpang
+        'status'
     ];
 
     // Relasi dengan model lain (opsional, sesuai kebutuhan)
