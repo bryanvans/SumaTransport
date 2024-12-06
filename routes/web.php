@@ -6,6 +6,9 @@ use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\BusScheduleController;
+
 
 /*
 |-------------------------------------------------------------------------- 
@@ -13,7 +16,17 @@ use App\Http\Controllers\Auth\GoogleController;
 |-------------------------------------------------------------------------- 
 */
 Route::controller(AuthController::class)->group(function () {
-    Route::get('login', 'showLogin')->name('login');
+    Route::get('login', function () {
+        if (Auth::check()) {
+            // Periksa usertype
+            if (Auth::user()->usertype === 'admin') {
+                return redirect()->route('dashboard');
+            } elseif (Auth::user()->usertype === 'user') {
+                return redirect()->route('home');
+            }
+        }
+        return app(AuthController::class)->showLogin();
+    })->name('login');
     Route::post('login', 'login');
     Route::post('logout', 'logout')->name('logout');
 });
@@ -42,24 +55,47 @@ Route::controller(QnAController::class)->group(function () {
 // Rute untuk halaman dashboard dan homepage (statik)
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
+
 
 // Rute untuk halaman lainnya seperti bus, jadwal, dll.
 Route::get('/bus', function () {
     return view('bus');
 });
-Route::get('/jadwalbus', function () {
-    return view('jadwalbus');
-})->name('jadwalbus');
+
+// Route::get('/jadwalbus', function () {
+//     return view('jadwalbus');
+// })->name('jadwalbus');
+
+Route::get('/jadwalbus', [BusScheduleController::class, 'index'])->name('jadwalbus');
+
+// routes/web.php
 Route::get('/rutebus', function () {
     return view('rutebus');
 })->name('rutebus');
 Route::get('/busdashboard', function () {
     return view('busdashboard');
 })->name('busdashboard');
+
 Route::get('/qnadashboard', function () {
     return view('qnadashboard');
 })->name('qnadashboard');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');  
+
+Route::get('/rutebus', function () {
+    return view('rutebus');
+})->name('rutebus');
+
+Route::get('/qnadashboard', function () {
+    return view('qnadashboard');
+})->name('qnadashboard');
+
+// Route::get('/jadwalbus', function () {
+//     return view('jadwalbus');
+// })->name('jadwalbus');
 
 // Rute untuk sistem CRUD Profil (auth middleware)
 Route::middleware('auth')->group(function () {
@@ -71,11 +107,17 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+
 // Rute untuk login/register dengan Google
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
-// Rute untuk halaman Jadwal Bus
-Route::get('/jadwal', function () {
-    return view('jadwal'); // Pastikan view file berada di resources/views/jadwal.blade.php
-})->name('jadwal');
+
+
+Route::resource('bus-schedules', BusScheduleController::class);
+
+
+Route::resource('schedules', ScheduleController::class);
+
+
+Route::post('/jadwalbus', [BusScheduleController::class, 'store'])->name('jadwalbus.store');

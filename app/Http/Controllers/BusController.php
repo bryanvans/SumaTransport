@@ -41,6 +41,7 @@ class BusController extends Controller
         // Mengembalikan data dalam format JSON
         return response()->json($buses);
     }
+    
 }
 
 

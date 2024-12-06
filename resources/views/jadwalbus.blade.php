@@ -29,6 +29,8 @@
         <link href="dashboardassets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="dashboardassets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> 
 
     </head>
 
@@ -70,10 +72,12 @@
 
                         <!-- App Search-->
                         <form class="app-search d-none d-lg-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
-                            </div>
+                        <div class="position-relative">
+    <input type="text" class="form-control" placeholder="Search...">
+    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+    </button>
+</div>
+
                         </form>
                     </div>
 
@@ -279,495 +283,163 @@
                         <!-- end page title -->
 
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Jadwal Bus</h4>
-                                        <p class="card-title-desc">
-                                            Keterangan ID Bus :<br>
-                                                                    111TI..... = Tiomaz<br>
-                                                                    121BT.... = KBT<br>
-                                                                    311PT.... = KPT<br>
-                                                                    466KA.... = Karya Agung
-                                        </p>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="card-title">Jadwal Bus</h4>
+                    <p class="card-title-desc">
+                        Keterangan ID Bus :<br>
+                        111TI..... = Tiomaz<br>
+                        121BT.... = KBT<br>
+                        311PT.... = KPT<br>
+                        466KA.... = Karya Agung
+                    </p>
+                </div>
 
-                                    </div>
-                                    <div class="card-body">
-        
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                            <thead>
-                                            <tr>
-                                                <th>ID Bus</th>
-                                                <th>Waktu Keberangkatan - Waktu Tiba</th>
-                                                <th>Dari</th>
-                                                <th>Tujuan</th>
-                                                <th>Jumlah Kursi</th>
-                                                <th>Tanggal</th>
-                                            </tr>
-                                            </thead>
-        
-        
-                                            <tbody>
-                                            <tr>
-                                                <td>121BT017</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI001</td>
-                                                <td>06:00 - 10.00</td>
-                                                <td>Medan</td>
-                                                <td>Siantar</td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT023</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT022</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI011</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI012</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI013</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI014</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI015</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI016</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI003</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI017</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI018</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT021</td>
-                                                <td>09:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI019</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI002</td>
-                                                <td>06.00 - 10.00</td>
-                                                <td>Medan</td>
-                                                <td>Parapat</td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI004</td>
-                                                <td>10.00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI022</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI023</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI024</td>
-                                                <td>08:00</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>111TI025</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT001</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT002</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT003</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT004</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT025</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT005</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT006</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT007</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT008</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT009</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>311PT010</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA011</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT024</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA012</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA013</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA014</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>466KA015</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT019</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121BT018</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>27/11/2024</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-        
-                                    </div>
+                <!-- Tombol Tambah Data di paling kanan, dengan margin atas -->
+                <!-- Tombol untuk membuka modal -->
+                <button type="button" class="btn text-white waves-effect waves-light mt-3" data-bs-toggle="modal" data-bs-target="#addBusScheduleModal" style="background-color: #6f42c1; border: none;">
+                  Tambah Data
+               </button>
+
+
+
+            </div>
+
+            <!-- Table to display existing bus schedules, moved below the description section -->
+            <div class="container mt-4">
+                <h3>Jadwal Bus</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID Bus</th>
+                            <th>Waktu Keberangkatan</th>
+                            <th>Waktu Tiba</th>
+                            <th>Dari</th>
+                            <th>Tujuan</th>
+                            <th>Jumlah Kursi</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($buses as $buses)
+                        <tr>
+                            <td>{{ $buses['id_bus']}}</td>
+                            <td>{{ $buses['waktu_keberangkatan']}}</td>
+                            <td>{{ $buses['waktu_tiba']}}</td>
+                            <td>{{ $buses['dari']}}</td>
+                            <td>{{ $buses['tujuan']}}</td>
+                            <td>{{ $buses['jumlah_kursi']}}</td>
+                            <td>{{ $buses['tanggal']}}</td>
+
+                        </tr>
+                        <!-- Add your bus schedule data here -->
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for adding a new bus schedule -->
+<div class="modal fade" id="addBusScheduleModal" tabindex="-1" aria-labelledby="addBusScheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBusScheduleModalLabel">Tambah Jadwal Bus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for adding data -->
+                <form id="addBusScheduleForm" method="POST" action="{{ route('jadwalbus.store') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="id_bus">ID Bus</label>
+                        <input type="text" id="id_bus" name="id_bus" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="waktu_keberangkatan">Waktu Keberangkatan</label>
+                        <input type="text" id="waktu_keberangkatan" name="waktu_keberangkatan" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="waktu_tiba">Waktu Tiba</label>
+                        <input type="text" id="waktu_tiba" name="waktu_tiba" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dari">Dari</label>
+                        <input type="text" id="dari" name="dari" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tujuan">Tujuan</label>
+                        <input type="text" id="tujuan" name="tujuan" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah_kursi">Jumlah Kursi</label>
+                        <input type="number" id="jumlah_kursi" name="jumlah_kursi" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal</label>
+                        <input type="date" id="tanggal" name="tanggal" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn mt-3 text-white" style="background-color: #6f42c1; border: none;">
+    Tambah Data
+</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add the JavaScript below -->
+<script>
+    // When the form is submitted
+    $('#addBusScheduleForm').on('submit', function(event) {
+        event.preventDefault(); // Prevent normal form submission
+
+        // Prepare the data to be sent
+        var formData = new FormData(this);
+
+        // Perform AJAX request
+        $.ajax({
+            url: '{{ route('bus-schedules.store') }}', // The route that handles the form submission
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // On success, add the new bus schedule to the table
+                var newRow = '<tr>' +
+                    '<td>' + response.id_bus + '</td>' +
+                    '<td>' + response.waktu_keberangkatan + '</td>' +
+                    '<td>' + response.waktu_tiba + '</td>' +
+                    '<td>' + response.dari + '</td>' +
+                    '<td>' + response.tujuan + '</td>' +
+                    '<td>' + response.jumlah_kursi + '</td>' +
+                    '<td>' + response.tanggal + '</td>' +
+                    '</tr>';
+                
+                // Append the new row to the table
+                $('table tbody').append(newRow);
+
+                // Close the modal
+                $('#addBusScheduleModal').modal('hide');
+                
+                // Optionally, reset the form after submission
+                $('#addBusScheduleForm')[0].reset();
+            },
+            error: function(xhr, status, error) {
+                console.error('Error: ' + error);
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    });
+</script>
+
+
                                 </div>
                             </div> <!-- end col -->
                         </div> <!-- end row -->
@@ -938,6 +610,8 @@
         <script src="dashboardassets/js/pages/datatables.init.js"></script>    
 
         <script src="dashboardassets/js/app.js"></script>
+        <!-- Bootstrap 5 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 

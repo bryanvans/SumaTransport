@@ -25,6 +25,18 @@ class RedirectIfAuthenticated
             }
         }
 
+        if (Auth::check()) {
+            $usertype = Auth::user()->usertype;
+
+            if ($usertype === 'admin') {
+                return redirect()->route('dashboard');
+            }
+
+            if ($usertype === 'user') {
+                return redirect()->route('home');
+            }
+        }
+
         return $next($request);
     }
 }

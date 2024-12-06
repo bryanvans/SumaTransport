@@ -12,14 +12,14 @@ return new class extends Migration
     public function up()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('username')->default('default_username')->change(); // Tambahkan default
+        $table->string('name')->default('default_username')->change(); // Tambahkan default
     });
 }
 
 public function down()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('username')->default(null)->change(); // Kembalikan default ke null
+        $table->string('name')->default(null)->change(); // Kembalikan default ke null
     });
 }
 

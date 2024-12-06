@@ -589,19 +589,12 @@
         <!-- Right Sidebar -->
         <div class="right-bar">
             <div data-simplebar class="h-100">
-                <div class="rightbar-title d-flex align-items-center p-3">
-
-                    
-
-                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
-                </div>
+                
 
                 <!-- Settings -->
                 <hr class="m-0" />
 
-                <div class="p-4">
+                
                     
                     
                         <input class="form-check-input" type="radio" name="layout"
@@ -671,7 +664,7 @@
                             id="layout-direction-rtl" value="rtl">
                     </div>
 
-                </div>
+                
 
             </div> <!-- end slimscroll-menu-->
         </div>
