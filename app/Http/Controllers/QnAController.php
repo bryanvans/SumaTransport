@@ -4,22 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Question;
+use Auth; // Pastikan untuk menggunakan Auth jika ingin menyimpan siapa yang memberikan jawaban
 
 class QnAController extends Controller
 {
     public function index(Request $request)
-{
-    $questions = Question::all();
+    {
+        $questions = Question::all();
 
-    if ($request->wantsJson()) {
-        return response()->json([
-            'success' => true,
-            'data' => $questions
-        ], 200);
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'data' => $questions
+            ], 200);
+        }
+
+        return view('qna', compact('questions'));
     }
-
-    return view('qna', compact('questions'));
-}
 
     // Store a new question (API + Web Form)
     public function store(Request $request)
@@ -89,5 +90,28 @@ class QnAController extends Controller
         $question->delete();
 
         return response()->json(['message' => 'Pertanyaan berhasil dihapus.'], 200);
+    }
+
+    // Store a new answer for a specific question
+    public function storeAnswer(Request $request, $questionId)
+    {
+        $request->validate([
+            'answer' => 'required|string',
+        ]);
+
+        $question = Question::findOrFail($questionId); // Temukan pertanyaan berdasarkan ID
+
+        // Simpan jawaban
+        $question->answer = $request->answer;
+        $question->save();
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Jawaban berhasil disimpan.',
+                'data' => $question,
+            ], 201);
+        }
+
+        return redirect()->route('qna.index')->with('success', 'Jawaban berhasil disimpan.');
     }
 }

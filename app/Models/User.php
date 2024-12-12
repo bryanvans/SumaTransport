@@ -35,4 +35,9 @@ class User extends Authenticatable
     {
         return $value ? asset('storage/' . $value) : asset('default-avatar.png');
     }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }

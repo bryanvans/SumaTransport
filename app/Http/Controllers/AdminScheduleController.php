@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BusSchedule;
 use Illuminate\Http\Request;
+use App\Models\Schedule;
 
-class BusScheduleController extends Controller
+class AdminScheduleController extends Controller
 {
-
-    // Menampilkan form untuk menambahkan jadwal bus
+    // Menampilkan halaman untuk membuat jadwal bus
     public function create()
     {
-        return view('admin.create-schedule'); // Pastikan path sesuai dengan lokasi view
+        return view('admin.create-schedule'); // Pastikan path sesuai dengan lokasi file blade
     }
 
     // Menyimpan jadwal bus baru
@@ -25,20 +24,22 @@ class BusScheduleController extends Controller
         ]);
 
         // Menyimpan jadwal baru ke database
-        BusSchedule::create([
+        Schedule::create([
             'bus_name' => $validated['bus_name'],
             'departure_time' => $validated['departure_time'],
             'route' => $validated['route'],
         ]);
 
-        // Redirect setelah menyimpan
-        return redirect()->route('bus-schedules.index')->with('success', 'Jadwal bus berhasil ditambahkan!');
+        // Redirect kembali ke dashboard admin dengan pesan sukses
+        return redirect()->route('admin.dashboard')->with('success', 'Jadwal bus berhasil ditambahkan!');
     }
 
     public function index()
 {
-    $schedules = BusSchedule::all();
+    // Ambil semua jadwal bus dari database
+    $schedules = Schedule::all();
+
+    // Tampilkan view dengan data jadwal
     return view('admin.bus-schedule', compact('schedules'));
 }
-
 }

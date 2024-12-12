@@ -1,23 +1,35 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Answer;
+use App\Models\Question;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class Answer extends Model
+class AnswerController extends Controller
 {
-    use HasFactory;
-
-    protected $fillable = ['question_id', 'user_id', 'answer'];
-
-    public function question()
+    // Menyimpan jawaban
+    public function store(Request $request, $questionId)
     {
-        return $this->belongsTo(Question::class);
-    }
+        // Validasi input
+        $request->validate([
+            'answer' => 'required|string|max:1000',
+        ]);
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
+        // Temukan pertanyaan berdasarkan ID
+        $question = Question::findOrFail($questionId);
+
+        // Simpan jawaban baru
+        $answer = new Answer([
+            'answer' => $request->input('answer'),
+            'user_id' => Auth::id(),
+        ]);
+
+        // Relasikan jawaban dengan pertanyaan
+        $question->answers()->save($answer);
+
+        // Redirect ke halaman pertanyaan dengan pesan sukses
+        return redirect()->route('qna', $questionId)->with('success', 'Jawaban berhasil dikirim!');
     }
 }

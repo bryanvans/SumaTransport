@@ -100,39 +100,32 @@
             &times;
         </button>
 </div>
-
-
-    <!-- Content -->
-    <div class="container mx-auto mt-10 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-4xl">
-        <h1 class="text-5xl font-bold text-center mb-8 text-white">Jadwal Bus</h1>
-
-        <!-- Jadwal Bus (Example for one route) -->
-        <div>
-            <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus KBT</h2>
-            <table class="min-w-full bg-white rounded-lg overflow-hidden">
-                <thead class="bg-gray-800">
+<!-- Content -->
+<div class="container mx-auto mt-10 p-6 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-4xl">
+    <h1 class="text-5xl font-bold text-center mb-8 text-white">Jadwal Bus</h1>
+    <!-- Jadwal Bus -->
+    <div>
+        <h2 class="text-3xl font-semibold mb-4 text-gray-300">Jadwal Bus</h2>
+        <table class="min-w-full bg-white rounded-lg overflow-hidden">
+            <thead class="bg-gray-800">
+                <tr>
+                    <th class="py-2 px-4 text-white">Nama Bus</th>
+                    <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
+                    <th class="py-2 px-4 text-white">Rute</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @foreach($schedules as $schedule)
                     <tr>
-                        <th class="py-2 px-4 text-white">Kota Keberangkatan</th>
-                        <th class="py-2 px-4 text-white">Tujuan</th>
-                        <th class="py-2 px-4 text-white">Waktu Keberangkatan</th>
+                        <td class="py-2 px-4">{{ $schedule->bus_name }}</td>
+                        <td class="py-2 px-4">{{ $schedule->departure_time }}</td>
+                        <td class="py-2 px-4">{{ $schedule->route }}</td>
                     </tr>
-                </thead>
-                <tbody class="text-gray-700">
-                    <tr>
-                        <td class="py-2 px-4">Medan</td>
-                        <td class="py-2 px-4">Tarutung</td>
-                        <td class="py-2 px-4">10:00</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 px-4">Medan</td>
-                        <td class="py-2 px-4">Toba</td>
-                        <td class="py-2 px-4">14:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-
+</div>
 </script>   
 <script>
     // Toggle Hamburger Menu
