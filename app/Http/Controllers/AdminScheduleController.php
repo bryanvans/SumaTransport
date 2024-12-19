@@ -100,6 +100,13 @@ class AdminScheduleController extends Controller
             'route' => 'required|string|max:255',
         ]);
 
+        if (empty($validated['bus_name'])) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Nama bus tidak boleh kosong!',
+            ], 400);
+        }
+
         $schedule = Schedule::create($validated);
 
         return response()->json([

@@ -6,6 +6,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\QnAController;
 use App\Http\Controllers\AdminScheduleController;
+use App\Http\Controllers\Api\BusController;
 
 
 /*
@@ -36,3 +37,9 @@ Route::get('/schedules/{id}', [AdminScheduleController::class, 'apiShow']); // G
 Route::post('/schedules', [AdminScheduleController::class, 'apiStore']); // POST new schedule
 Route::put('/schedules/{id}', [AdminScheduleController::class, 'apiUpdate']); // PUT update schedule
 Route::delete('/schedules/{id}', [AdminScheduleController::class, 'apiDestroy']); // DELETE schedule
+
+Route::get('/buses', [BusController::class, 'index']); // Mendapatkan semua data bus
+Route::get('/buses/{id}', [BusController::class, 'show']); // Mendapatkan data bus berdasarkan ID
+Route::post('/buses', [BusController::class, 'store']); // Menambahkan data bus baru
+Route::put('/buses/{id}', [BusController::class, 'update']); // Mengupdate data bus berdasarkan ID
+Route::delete('/buses/{id}', [BusController::class, 'destroy']); // Menghapus data bus berdasarkan ID

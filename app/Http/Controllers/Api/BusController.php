@@ -41,7 +41,6 @@ class BusController extends Controller
             'name' => 'required|string|max:255',
             'route' => 'required|string|max:255',
             'capacity' => 'required|integer',
-            'status' => 'required|string',
         ]);
 
         // Buat data bus baru berdasarkan input
@@ -90,7 +89,6 @@ class BusController extends Controller
         'name' => 'nullable|string',
         'route' => 'nullable|string',
         'capacity' => 'nullable|integer',
-        'status' => 'nullable|string',
     ]);
 
     DB::table('buses')->where('id', $id)->update($validated);
