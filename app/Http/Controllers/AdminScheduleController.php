@@ -4,42 +4,185 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AdminScheduleController extends Controller
 {
-    // Menampilkan halaman untuk membuat jadwal bus
-    public function create()
+    public function index()
     {
-        return view('admin.create-schedule'); // Pastikan path sesuai dengan lokasi file blade
+        $schedules = Schedule::all();
+        return view('admin.bus-schedule', compact('schedules'));
     }
 
-    // Menyimpan jadwal bus baru
+    public function create()
+    {
+        return view('admin.create-schedule');
+    }
+
     public function store(Request $request)
     {
-        // Validasi input
+        // Validasi input dari form
         $validated = $request->validate([
             'bus_name' => 'required|string|max:255',
             'departure_time' => 'required|date_format:H:i',
             'route' => 'required|string|max:255',
         ]);
 
-        // Menyimpan jadwal baru ke database
-        Schedule::create([
-            'bus_name' => $validated['bus_name'],
-            'departure_time' => $validated['departure_time'],
-            'route' => $validated['route'],
-        ]);
+        // Simpan ke database
+        Schedule::create($validated);
 
-        // Redirect kembali ke dashboard admin dengan pesan sukses
-        return redirect()->route('admin.dashboard')->with('success', 'Jadwal bus berhasil ditambahkan!');
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.bus-schedule')->with('success', 'Jadwal bus berhasil ditambahkan!');
     }
 
-    public function index()
-{
-    // Ambil semua jadwal bus dari database
-    $schedules = Schedule::all();
+    // API: Ambil semua jadwal dengan HATEOAS
+    public function apiIndex()
+    {
+        $schedules = Schedule::all();
 
-    // Tampilkan view dengan data jadwal
-    return view('admin.bus-schedule', compact('schedules'));
-}
+        $response = $schedules->map(function ($schedule) {
+            return [
+                'id' => $schedule->id,
+                'bus_name' => $schedule->bus_name,
+                'departure_time' => $schedule->departure_time,
+                'route' => $schedule->route,
+                'links' => [
+                    'self' => url("/api/schedules/{$schedule->id}"),
+                    'update' => url("/api/schedules/{$schedule->id}/update"),
+                    'delete' => url("/api/schedules/{$schedule->id}/delete"),
+                ]
+            ];
+        });
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Daftar semua jadwal',
+            'data' => $response
+        ], 200);
+    }
+
+    // API: Ambil satu jadwal berdasarkan ID
+    public function apiShow($id)
+    {
+        try {
+            $schedule = Schedule::findOrFail($id);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Detail jadwal',
+                'data' => [
+                    'id' => $schedule->id,
+                    'bus_name' => $schedule->bus_name,
+                    'departure_time' => $schedule->departure_time,
+                    'route' => $schedule->route,
+                    'links' => [
+                        'self' => url("/api/schedules/{$id}"),
+                        'update' => url("/api/schedules/{$id}/update"),
+                        'delete' => url("/api/schedules/{$id}/delete"),
+                        'all_schedules' => url("/api/schedules")
+                    ]
+                ]
+            ], 200);
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Jadwal tidak ditemukan'
+            ], 404);
+        }
+    }
+
+    // API: Tambahkan jadwal baru
+    public function apiStore(Request $request)
+    {
+        $validated = $request->validate([
+            'bus_name' => 'required|string|max:255',
+            'departure_time' => 'required|date_format:H:i',
+            'route' => 'required|string|max:255',
+        ]);
+
+        $schedule = Schedule::create($validated);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Jadwal berhasil ditambahkan!',
+            'data' => [
+                'id' => $schedule->id,
+                'bus_name' => $schedule->bus_name,
+                'departure_time' => $schedule->departure_time,
+                'route' => $schedule->route,
+                'links' => [
+                    'self' => url("/api/schedules/{$schedule->id}"),
+                    'all_schedules' => url("/api/schedules")
+                ]
+            ]
+        ], 201);
+    }
+
+    // API: Update jadwal berdasarkan ID
+    public function apiUpdate(Request $request, $id)
+    {
+        try {
+            $schedule = Schedule::findOrFail($id);
+
+            $validated = $request->validate([
+                'bus_name' => 'nullable|string|max:255',
+                'departure_time' => 'nullable|date_format:H:i',
+                'route' => 'nullable|string|max:255',
+            ]);
+
+            if (empty(array_filter($validated))) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Tidak ada data yang diperbarui.'
+                ], 422);
+            }
+
+            $schedule->update($validated);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Jadwal berhasil diperbarui!',
+                'data' => [
+                    'id' => $schedule->id,
+                    'bus_name' => $schedule->bus_name,
+                    'departure_time' => $schedule->departure_time,
+                    'route' => $schedule->route,
+                    'links' => [
+                        'self' => url("/api/schedules/{$id}"),
+                        'delete' => url("/api/schedules/{$id}/delete"),
+                        'all_schedules' => url("/api/schedules")
+                    ]
+                ]
+            ], 200);
+
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Jadwal tidak ditemukan'
+            ], 404);
+        }
+    }
+
+    // API: Hapus jadwal berdasarkan ID
+    public function apiDestroy($id)
+    {
+        try {
+            $schedule = Schedule::findOrFail($id);
+            $schedule->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Jadwal berhasil dihapus',
+                'links' => [
+                    'all_schedules' => url("/api/schedules")
+                ]
+            ], 200);
+
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Jadwal tidak ditemukan'
+            ], 404);
+        }
+    }
 }

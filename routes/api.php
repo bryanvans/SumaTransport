@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\RouteController;
-use App\Http\Controllers\Api\BusController;
 use App\Http\Controllers\QnAController;
+use App\Http\Controllers\AdminScheduleController;
 
 
 /*
@@ -24,16 +24,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/buses', [BusController::class, 'index']); // Menampilkan semua bus
-Route::get('/buses/{id}', [BusController::class, 'show']); // Menampilkan detail bus
-Route::post('/buses', [BusController::class, 'store']); // Menambahkan bus baru
-Route::put('/buses/{id}', [BusController::class, 'update']); // Mengupdate data bus
-Route::delete('/buses/{id}', [BusController::class, 'destroy']); // Menghapus data bus
-
 Route::get('/qna', [QnAController::class, 'index']); // Get all questions
 Route::post('/qna', [QnAController::class, 'store']); // Create a new question
 Route::get('/qna/{id}', [QnAController::class, 'show']); // Get a single question
 Route::put('/qna/{id}', [QnAController::class, 'update']); // Update a question
 Route::delete('/qna/{id}', [QnAController::class, 'destroy']); // Delete a question
 
-
+// Endpoint untuk API schedules
+Route::get('/schedules', [AdminScheduleController::class, 'apiIndex']); // GET all schedules
+Route::get('/schedules/{id}', [AdminScheduleController::class, 'apiShow']); // GET schedule by ID
+Route::post('/schedules', [AdminScheduleController::class, 'apiStore']); // POST new schedule
+Route::put('/schedules/{id}', [AdminScheduleController::class, 'apiUpdate']); // PUT update schedule
+Route::delete('/schedules/{id}', [AdminScheduleController::class, 'apiDestroy']); // DELETE schedule

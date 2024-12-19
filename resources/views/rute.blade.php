@@ -12,6 +12,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: 'Roboto', sans-serif;
+            background-attachment: fixed;
         }
     </style>
 </head>
