@@ -11,8 +11,7 @@
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 1)), 
-                              url('{{ asset('image/Background.jpeg') }}');
+            background-image: url('image/Background.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -57,7 +56,8 @@
                         <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="karyaagung">Karya Agung</a></li>
                     </ul>
                 </li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="qna">QnA</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="qna">QnA</a>
+                </li>
                 @if(Auth::check())
                 <li class="relative group">
                     <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-400" href="#">
@@ -81,7 +81,33 @@
         </div>
     </div>
 </nav>
-
+    
+ <!-- Hamburger Menu Overlay -->
+    <div id="menu-overlay" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white w-3/4 p-4 rounded-lg relative">
+            <ul class="space-y-2">
+                <li><a href="home" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Beranda</a></li>
+                <li><a href="jadwal" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Jadwal</a></li>
+                <li><a href="rute" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Rute</a></li>
+                <li class="relative group">
+                    <a class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4" href="#">Informasi Bus <i class="fas fa-chevron-down"></i></a>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block bg-white text-black">
+                        <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-1 px-4 block whitespace-no-wrap" href="kbt">KBT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-1 px-4 block whitespace-no-wrap" href="kpt">KPT</a></li>
+                        <li><a class="bg-gray-200 hover:bg-gray-400 py-1 px-4 block whitespace-no-wrap" href="tiomaz">Tiomaz</a></li>
+                        <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-1 px-4 block whitespace-no-wrap" href="karyaagung">Karya Agung</a></li>
+                    </ul>
+                </li>
+                <li><a href="qna" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">QnA</a></li>
+                <li><a href="login" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Login</a></li>
+                <li><a href="register" class="block text-lg text-gray-700 hover:text-red-500 py-1 px-4">Register</a></li>
+            </ul>
+        </div>
+        <!-- Close Button (Di luar kotak) -->
+        <button id="close-menu" class="text-white hover:text-gray-300 absolute top-24 right-12 text-2xl bg-gray-800 rounded-full p-2">
+            &times;
+        </button>
+    </div>
 
     <!-- Profil -->
     <div class="container mx-auto mt-16 p-4 bg-gray-900 bg-opacity-90 rounded-lg shadow-lg max-w-md">
@@ -172,10 +198,18 @@
     </div>
 
     <script>
-        function toggleModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.toggle('hidden');
-        }
+        // Toggle Navbar
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenu = document.getElementById('close-menu');
+        
+        navbarToggle.addEventListener('click', function() {
+            menuOverlay.classList.remove('hidden');
+        });
+        
+        closeMenu.addEventListener('click', function() {
+            menuOverlay.classList.add('hidden');
+        });
     </script>
 </body>
 </html>

@@ -104,9 +104,9 @@
     <!-- Clients Section -->
     <section id="clients" class="clients section">
 
-      <div class="container" data-aos="fade-up">
+      <div class="container" d-flex justify-content-center data-aos="fade-up">
 
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src="homepage\img\clients\Karya Agung.png" class="img-fluid" alt="">
@@ -140,42 +140,78 @@
           <div class="col-xl-7">
             <div class="row gy-4 icon-boxes">
 
-            <div class="card" style="width: 18rem;">
-                <img src="homepage\img\KBT1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <!-- Card 1 -->
+              <div class="card" style="width: 18rem; display: flex; flex-direction: column; height: 100%; margin-right: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="homepage/img/KBT1.jpg" class="card-img-top" alt="..." style="margin-top: 10px; border-radius: 5px;">
+                <div class="card-body d-flex flex-column flex-grow-1">
                   <h5 class="card-title">KBT</h5>
-                  <p class="card-text">Layanan bus andalan dengan rute Medan - Tarutung, menawarkan kenyamanan, keamanan, dan fasilitas modern untuk perjalanan jarak jauh di Sumatera Utara.</p>
-                  <a href="kbt" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
+                  <p class="card-text" style="text-align: justify;">
+                    Layanan bus andalan dengan rute Medan - Tarutung, menawarkan kenyamanan, keamanan, dan fasilitas modern untuk perjalanan jarak jauh di Sumatera Utara.
+                  </p>
+                  <a href="kbt" class="btn btn-primary stretched-link mt-auto" 
+                     style="transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center;  width: 100%; margin-top: 16px; transition: all 0.3s ease-in-out;" 
+                     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Baca Selengkapnya</a>
                 </div>
               </div>
-
-              <div class="card" style="width: 18rem;">
-                <img src="homepage\img\KPT1.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+            
+              <!-- Card 2 -->
+              <div class="card" style="width: 18rem; display: flex; flex-direction: column; height: 100%; margin-right: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="homepage\img\KPT1.jpeg" class="card-img-top" alt="..." style="margin-top: 10px; height: 150px; object-fit: cover; border-radius: 5px;">
+                <div class="card-body d-flex flex-column flex-grow-1">
                   <h5 class="card-title">KPT</h5>
-                  <p class="card-text">Menyediakan transportasi nyaman dengan rute Medan - Toba, dilengkapi fasilitas modern dan pelayanan terbaik untuk perjalanan di Sumatera Utara.</p>
-                  <a href="kpt" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
+                  <p class="card-text" style="text-align: justify;">
+                    Menyediakan transportasi nyaman dengan rute Medan - Toba, dilengkapi fasilitas modern dan pelayanan terbaik untuk perjalanan di Sumatera Utara.
+                  </p>
+                  <a href="kpt" class="btn btn-primary stretched-link mt-auto" 
+                     style="transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center;  width: 100%; margin-top: 16px; transition: all 0.3s ease-in-out;" 
+                     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Baca Selengkapnya</a>
                 </div>
               </div>
-
-              <div class="card" style="width: 18rem;">
-                <img src="homepage\img\Tiomaz1.jpeg" class="card-img-top" alt="...">
+            
+              <!-- Card 3 -->
+              <div class="card" style="width: 18rem; display: flex; flex-direction: column; height: 100%; margin-right: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="homepage\img\Tiomaz1.jpeg" class="card-img-top" alt="..." style="margin-top: 10px;height: 160px; border-radius: 5px;">
                 <div class="card-body">
                   <h5 class="card-title">TIOMAZ</h5>
-                  <p class="card-text">Transportasi handal dengan rute Medan - Tarutung, menawarkan perjalanan aman dan nyaman dengan fasilitas lengkap untuk kenyamanan penumpang.</p>
-                  <a href="tiomaz" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
+                  <p class="card-text" style="text-align: justify;">
+                    Transportasi handal dengan rute Medan - Tarutung, menawarkan perjalanan aman dan nyaman dengan fasilitas lengkap untuk kenyamanan penumpang.
+                  </p>
+                  <a href="tiomaz" class="btn btn-primary stretched-link" 
+                     style="transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center;  width: 100%; margin-top: 16px; transition: all 0.3s ease-in-out;" 
+                     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Baca Selengkapnya</a>
                 </div>
               </div>
-
-              <div class="card" style="width: 18rem;">
-                <img src="homepage\img\KaryaAgung.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Karya Agung</h5>
-                  <p class="card-text">Layanan bus terpercaya dengan rute Medan - Sibolga, memberikan kenyamanan dan keamanan untuk perjalanan jarak jauh di Sumatera Utara.</p>
-                  <a href="karyaagung" class="btn btn-primary stretched-link">Baca Selengkapnya</a>
+            
+              <!-- Card 4 -->
+              <div class="card" style="width: 18rem; display: flex; flex-direction: column; height: 430px; margin-right: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="homepage\img\KaryaAgung.jpeg" class="card-img-top" alt="..." style="margin-top: 10px; height: 160px; width: 100%; object-fit: cover; border-radius: 5px;">
+                <div class="card-body d-flex flex-column" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h5 class="card-title">Karya Agung</h5>
+                    <p class="card-text" style="text-align: justify;">
+                      Layanan bus terpercaya dengan rute Medan - Sibolga, memberikan kenyamanan dan keamanan untuk perjalanan jarak jauh di Sumatera Utara.
+                    </p>
+                  </div>
+                  <a href="karyaagung" class="btn btn-primary stretched-link" 
+                     style="transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center; width: 100%; margin-top: 16px; transition: all 0.3s ease-in-out;" 
+                     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'" 
+                     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Baca Selengkapnya</a>
                 </div>
               </div>
-
+            
+            </div>
+              
             </div>
           </div>
 
